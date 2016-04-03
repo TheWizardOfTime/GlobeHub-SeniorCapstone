@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+    body {
+        font: 12px sans-serif;
+    }
+    /*path {*/
+        /*stroke-width: 1px;*/
+        /*stroke: white;*/
+        /*fill: none;*/
+        /*cursor: pointer;*/
+    /*}*/
+    /*path:hover, path.highlighted {*/
+        /*fill: steelblue;*/
+    /*}*/
+</style>
+
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script>
+
+    var countryLookUpArray = [];
+    var countryLookUp;
+
+    //Map dimensions (in pixels)
+    var width = 4096,
+            height = 2048;
+
+    var color = d3.rgb;
+
+    //Map projection
+    var projection = d3.geo.equirectangular()
+            .translate([width/2, height/2])
+            .scale(650);
+
+    //Generate paths based on projection
+    var path = d3.geo.path()
+            .projection(projection);
+
+    //Create an SVG
+    var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+    svg.append('rect')
+            .attr('width', width)
+            .attr('height', height)
+            .attr('fill', 'black');
+
+    //Group for the map features
+    var features = svg.append("g")
+            .attr("class","features");
+
+    d3.json("./data/countries.topojson",function(error,world) {
+        if (error) return console.log(error);//unknown error, check the console
+        //Create a path for each map feature in the data
+        features.selectAll("path")
+                .data(topojson.feature(world,world.objects.collection).features) //generate features from TopoJSON
+                .enter()
+                .append("path")
+                .attr("d",path)
+                .style("fill", function(d,i ) {
+                    var grey = 0+i;
+                    if(d.properties.iso_a2!= -99) {
+                    array_item = '"'+d.properties.iso_a2+'"'+':'+'"'+grey+'"';
+                    console.log(array_item);
+                    return color(grey,grey,grey)}
+                });
+    });
+    </script>
+</body>
+</html>

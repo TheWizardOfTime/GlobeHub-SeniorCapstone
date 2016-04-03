@@ -1,0 +1,247 @@
+name,Latitude,Longitude,alpha-2,alpha-3,region,sub-region,newsnow,bbc_name,im_name
+Afghanistan,33.93911,67.709953,AF,AFG,Asia,Southern Asia,World+News/Asia/Afghanistan,Afghanistan,Afghanistan
+Aland Islands,34.622473,32.88002,AX,ALA,Europe,Northern Europe,none,none,none
+Albania,41.153332,20.168331,AL,ALB,Europe,Southern Europe,World+News/Europe/Western/Albania,Albania,Albania
+Algeria,28.033886,1.659626,DZ,DZA,Africa,Northern Africa,World+News/Africa/Algeria,Algeria,Algeria
+American Samoa,-14.270972,-170.132217,AS,ASM,Oceania,Polynesia,?search=American+Samoa&lang=en&searchheadlines=1,none,American Samoa
+Andorra,42.546245,1.601554,AD,AND,Europe,Southern Europe,?search=Andorra&lang=en&searchheadlines=1,Andorra,Andorra
+Angola,-11.202692,17.873887,AO,AGO,Africa,Middle Africa,World+News/Africa/Angola,Angola,Angola
+Anguilla,18.220554,-63.068615,AI,AIA,Americas,Caribbean,none,Anguilla,Anguilla
+Antarctica,-75.250973,-0.071389,AQ,ATA,none,none,none,none,Antartica
+Antigua and Barbuda,17.060816,-61.796428,AG,ATG,Americas,Caribbean,?search=Antigua&lang=en&searchheadlines=1,Antigua/Barbuda,Antigua and Barbuda
+Argentina,-38.416097,-63.616672,AR,ARG,Americas,South America,World+News/Latin+America/South+America/Argentina,Argentina,Argentina
+Armenia,40.069099,45.038189,AM,ARM,Asia,Western Asia,World+News/Asia/Armenia,Armenia,Armenia
+Aruba,12.52111,-69.968338,AW,ABW,Americas,Caribbean,?search=Aruba&lang=en&searchheadlines=1,Aruba,Aruba
+Australia,-25.274398,133.775136,AU,AUS,Oceania,Australia and New Zealand,World+News/South+Pacific/Australia,Australia,Australia
+Austria,47.516231,14.550072,AT,AUT,Europe,Western Europe,World+News/Europe/Western/Austria,Austria,Austria
+Azerbaijan,40.143105,47.576927,AZ,AZE,Asia,Western Asia,World+News/Asia/Azerbaijan,Azerbaijan,Azerbaijan
+Bahamas,25.03428,-77.39628,BS,BHS,Americas,Caribbean,World+News/Caribbean/Bahamas,Bahamas,Bahamas+ The
+Bahrain,25.930414,50.637772,BH,BHR,Asia,Western Asia,World+News/Middle+East/Bahrain,Bahrain,Bahrain
+Bangladesh,23.684994,90.356331,BD,BGD,Asia,Southern Asia,World+News/Asia/Bangladesh,Bangladesh,Bangladesh
+Barbados,13.193887,-59.543198,BB,BRB,Americas,Caribbean,World+News/Caribbean/Barbados,Barbados,Barbados
+Belarus,53.709807,27.953389,BY,BLR,Europe,Eastern Europe,World+News/Europe/Eastern/Belarus,Belarus,Belarus
+Belgium,50.503887,4.469936,BE,BEL,Europe,Western Europe,World+News/Europe/Western/Belgium,Belgium,Belgium
+Belize,17.189877,-88.49765,BZ,BLZ,Americas,Central America,?search=Belize&lang=en&searchheadlines=1,Belize,Belize
+Benin,9.30769,2.315834,BJ,BEN,Africa,Western Africa,?search=Benin&lang=en&searchheadlines=1,Benin,Benin
+Bermuda,32.321384,-64.75737,BM,BMU,Americas,Northern America,?search=Bermuda&lang=en&searchheadlines=1,Bermuda,Bermuda
+Bhutan,27.514162,90.433601,BT,BTN,Asia,Southern Asia,World+News/Asia/Bhutan,Bhutan,Bhutan
+Bolivia (Plurinational State of),-16.290154,-63.588653,BO,BOL,Americas,South America,World+News/Latin+America/South+America/Bolivia,Bolivia,Bolivia
+Bosnia and Herzegovina,43.915886,17.679076,BA,BIH,Europe,Southern Europe,?search=Bosnia&lang=en&searchheadlines=1,Bosnia-Herceg,Bosnia and Herzegovina
+Botswana,-22.328474,24.684866,BW,BWA,Africa,Southern Africa,World+News/Africa/Botswana,Botswana,Botswana
+Bouvet Island,-54.423199,3.413194,BV,BVT,none,none,none,none,none
+Brazil,-14.235004,-51.92528,BR,BRA,Americas,South America,World+News/Latin+America/South+America/Brazil,Brazil,Brazil
+British Indian Ocean Territory,-6.343194,71.876519,IO,IOT,none,none,none,none,none
+Virgin Islands (British),18.420695,-64.639968,VG,VGB,Americas,Caribbean,?search=Virgin+Islands&lang=a&searchheadlines=1,British Virgin Isla,British Virgin Islands
+Brunei Darussalam,4.535277,114.727669,BN,BRN,Asia,South-Eastern Asia,?search=Brunei&lang=en&searchheadlines=1,Brunei,Brunei
+Bulgaria,42.733883,25.48583,BG,BGR,Europe,Eastern Europe,World+News/Europe/Eastern/Bulgaria,Bulgaria,Bulgaria
+Burkina Faso,12.238333,-1.561593,BF,BFA,Africa,Western Africa,?search=Burkina+Faso&lang=en,Burkina Faso,Burkina Faso
+Myanmar (Burma),21.913965,95.956223,MM,MMR,Asia,South-Eastern Asia,World+News/Asia/Burma,Burma,Burma
+Burundi,-3.373056,29.918886,BI,BDI,Africa,Eastern Africa,World+News/Africa/Burundia,Burundi,Burundi
+Cabo Verde (Cape Verde),16.002082,-24.013197,CV,CPV,Africa,Western Africa,?search=Cape+Verde&lang=en&searchheadlines=1,Cape Verde,Cape Verde
+Cambodia,12.565679,104.990963,KH,KHM,Asia,South-Eastern Asia,World+News/Asia/Cambodia,Cambodia,Cambodia
+Cameroon,7.369722,12.354722,CM,CMR,Africa,Middle Africa,World+News/Africa/Cameroon,Cameroon,Cameroon
+Canada,56.130366,-106.346771,CA,CAN,Americas,Northern America,World+News/North+America/Canada,Canada,Canada
+Cayman Islands,19.513469,-80.566956,KY,CYM,Americas,Caribbean,?search=Cayman+Islands&lang=en&searchheadlines=1,Cayman Islands,Cayman Islands
+Central African Republic,6.611111,20.939444,CF,CAF,Africa,Middle Africa,World+News/Africa/Central+African+Republic,Central Africam,Central African Republic
+Chad,15.454166,18.732207,TD,TCD,Africa,Middle Africa,None,Chad,Chad
+Chile,-35.675147,-71.542969,CL,CHL,Americas,South America,World+News/Latin+America/South+America/Chile,Chile,Chile
+China,35.86166,104.195397,CN,CHN,Asia,Eastern Asia,World+News/Asia/China,China,China
+Christmas Island,-10.447525,105.690449,CX,CXR,none,none,?search=Christmas+Island&lang=en&searchheadlines=1,none,Christmas Island
+Colombia,4.570868,-74.297333,CO,COL,Americas,South America,World+News/Latin+America/South+America/Colombia,Colombia,Colombia
+Comoros,-11.875001,43.872219,KM,COM,Africa,Eastern Africa,none,Comoros,Comoros
+Congo (Democratic Republic of the),-4.038333,21.758664,CD,COD,Africa,Middle Africa,World+News/Africa/DR+Congo,Dem Rep Congo,Congo+ Democratic Republic of the
+Congo (Republic of the),-0.228021,15.827659,CG,COG,Africa,Middle Africa,?search=Congo&lang=en&searchheadlines=1,Rep of Congo,Congo+ Republic of the
+Cook Islands,-21.236736,-159.777671,CK,COK,Oceania,Polynesia,none,Cook Islands,Cook Islands
+Costa Rica,9.748917,-83.753428,CR,CRI,Americas,Central America,World+News/Latin+America/Central+America/Costa+Rica,Costa Rica,Costa Rica
+C»te d'Ivoire,7.539989,-5.54708,CI,CIV,Africa,Western Africa,World+News/Africa/Ivory+Coast,Ivory Coast,Cote d'Ivoire
+Croatia,45.1,15.2,HR,HRV,Europe,Southern Europe,World+News/Europe/Western/Croatia,Croatia,Croatia
+Cuba,21.521757,-77.781167,CU,CUB,Americas,Caribbean,World+News/Caribbean/Cuba,Cuba,Cuba
+Curaçao,12.1833,-69,CW,CUW,Americas,Caribbean,?search=Curacao&lang=en&searchheadlines=1,Curacao,Curacao
+Cyprus,35.126413,33.429859,CY,CYP,Asia,Western Asia,World+News/Europe/Western/Cyprus,Cyprus,Cyprus
+Czech Republic,49.817492,15.472962,CZ,CZE,Europe,Eastern Europe,World+News/Europe/Eastern/Czech+Republic,Czech Republic,Czech Republic
+Denmark,56.26392,9.501785,DK,DNK,Europe,Northern Europe,World+News/Europe/Northern/Denmark,Denmark,Denmark
+Djibouti,11.825138,42.590275,DJ,DJI,Africa,Eastern Africa,?search=Djibouti&lang=en&searchheadlines=1,Djibouti,Djibouti
+Dominica,15.414999,-61.370976,DM,DMA,Americas,Caribbean,?search=Djibouti&lang=en&searchheadlines=1,Dominica,Dominica
+Dominican Republic,18.735693,-70.162651,DO,DOM,Americas,Caribbean,World+News/Caribbean/Dominican+Republic,Dominican Republ,Dominican Republic
+Ecuador,-1.831239,-78.183406,EC,ECU,Americas,South America,World+News/Latin+America/South+America/Ecuador,Ecuador,Ecuador
+Egypt,26.820553,30.802498,EG,EGY,Africa,Northern Africa,World+News/Africa/Egypt,Egypt,Egypt
+El Salvador,13.794185,-88.89653,SV,SLV,Americas,Central America,World+News/Latin+America/Central+America/El+Salvador,El Salvador,El Salvador
+Equatorial Guinea,1.650801,10.267895,GQ,GNQ,Africa,Middle Africa,?search=Equatorial+Guinea&lang=en&searchheadlines=1,Equator'l Guinea,Equatorial Guinea
+Eritrea,15.179384,39.782334,ER,ERI,Africa,Eastern Africa,?search=Eritrea&lang=en&searchheadlines=1,Eritrea,Eritrea
+Estonia,58.595272,25.013607,EE,EST,Europe,Northern Europe,World+News/Europe/Northern/Estonia,Estonia,Estonia
+Ethiopia,9.145,40.489673,ET,ETH,Africa,Eastern Africa,World+News/Africa/Ethiopia,Ethiopia,Ethiopia
+Falkland Islands (Malvinas),-51.796253,-59.523613,FK,FLK,Americas,South America,World+News/Latin+America/South+America/Falkland+Islands,Falkland Islands,Falkland Islands (Islas Malvinas)
+Faroe Islands,61.892635,-6.911806,FO,FRO,Europe,Northern Europe,World+News/Europe/Northern/Faroa+Islands,Faroe Islands,Faroe Islands
+Fiji,-16.578193,179.414413,FJ,FJI,Oceania,Melanesia,World+News/South+Pacific/Fiji,Fiji,Fiji
+Finland,61.92411,25.748151,FI,FIN,Europe,Northern Europe,World+News/Europe/Northern/Finland,Finland,Finland
+France,46.227638,2.213749,FR,FRA,Europe,Western Europe,World+News/Europe/Western/France,France,France
+French Guiana,3.933889,-53.125782,GF,GUF,Americas,South America,?search=French+Guiana&lang=en&searchheadlines=1,French Guiana,None
+French Polynesia,-17.679742,-149.406843,PF,PYF,Oceania,Polynesia,?search=French+Polynesia&lang=en&searchheadlines=1,French Polynesia,French Polynesia
+French Southern Territories,-49.280366,69.348557,TF,ATF,none,none,none,none,none
+Gabon,-0.803689,11.609444,GA,GAB,Africa,Middle Africa,?search=Gabon&lang=en&searchheadlines=1,Gabon,Gabon
+Gambia,13.443182,-15.310139,GM,GMB,Africa,Western Africa,?search=Gambia&lang=en&searchheadlines=1,Gambia,"Gambia, The"
+Georgia,42.315407,43.356892,GE,GEO,Asia,Western Asia,World+News/Europe/Eastern/Georgia,Georgia,Georgia
+Germany,51.165691,10.451526,DE,DEU,Europe,Western Europe,World+News/Europe/Western/Germany,Germany,Germany
+Ghana,7.946527,-1.023194,GH,GHA,Africa,Western Africa,World+News/Africa/Ghana,Ghana,Ghana
+Gibraltar,36.137741,-5.345374,GI,GIB,Europe,Southern Europe,World+News/Europe/Western/Gibralter,Gibraltar,Gibraltar
+Greece,39.074208,21.824312,GR,GRC,Europe,Southern Europe,World+News/Europe/Western/Greece,Greece,Greece
+Greenland,71.706936,-42.604303,GL,GRL,Americas,Northern America,World+News/Europe/Northern/Greenland,Greenland,Greenland
+Grenada,12.262776,-61.604171,GD,GRD,Americas,Caribbean,?search=Grenada&lang=en&searchheadlines=1,Grenada,Grenada
+Guadeloupe,16.995971,-62.067641,GP,GLP,Americas,Caribbean,?search=Guadeloupe&lang=en&searchheadlines=1,Guadeloupe,Guadeloupe
+Guam,13.444304,144.793731,GU,GUM,Oceania,Micronesia,?search=Guam&lang=en&searchheadlines=1,Guam,Guam
+Guatemala,15.783471,-90.230759,GT,GTM,Americas,Central America,World+News/Latin+America/Central+America/Guatemala,Guatemala,Guatemala
+Guernsey,49.465691,-2.585278,GG,GGY,Europe,Northern Europe,none,Channel Islands,Channel Islands
+Guinea,9.945587,-9.696645,GN,GIN,Africa,Western Africa,World+News/Africa/Guinea,Guinea,Guinea
+Guinea-Bissau,11.803749,-15.180413,GW,GNB,Africa,Western Africa,World+News/Africa/,Guinea-Bissau,Guinea-Bissau
+Guyana,4.860416,-58.93018,GY,GUY,Americas,South America,?search=Guyana&lang=en&searchheadlines=1,Guyana,Guyana
+Haiti,18.971187,-72.285215,HT,HTI,Americas,Caribbean,World+News/Caribbean/Haiti,Haiti,Haiti
+Heard Island and McDonald Islands,-53.08181,73.504158,HM,HMD,none,none,none,none,none
+Honduras,15.199999,-86.241905,HN,HND,Americas,Central America,World+News/Latin+America/Central+America/Honduras,Honduras,Honduras
+Hong Kong,22.396428,114.109497,HK,HKG,Asia,Eastern Asia,World+News/Asia/Hong+Kong,Hong Kong,Hong Kong
+Hungary,47.162494,19.503304,HU,HUN,Europe,Eastern Europe,World+News/Europe/Eastern/Hungary,Hungary,Hungary
+Iceland,64.963051,-19.020835,IS,ISL,Europe,Northern Europe,World+News/Europe/Northern/Iceland,Iceland,Iceland
+India,20.593684,78.96288,IN,IND,Asia,Southern Asia,World+News/Asia/India,India,India
+Indonesia,-0.789275,113.921327,ID,IDN,Asia,South-Eastern Asia,World+News/Asia/Indonesia,Indonesia,Indonesia
+Iran (Islamic Republic of),32.427908,53.688046,IR,IRN,Asia,Southern Asia,World+News/Middle+East/Iran,Iran,Iran
+Iraq,33.223191,43.679291,IQ,IRQ,Asia,Western Asia,World+News/Middle+East/Iraq,Iraq,Iraq
+Ireland,53.41291,-8.24389,IE,IRL,Europe,Northern Europe,?search=Ireland&lang=en&searchheadlines=1,Ireland,Ireland
+Isle of Man,54.236107,-4.548056,IM,IMN,Europe,Northern Europe,?search=Isle+of+Man&lang=en&searchheadlines=1,Isle of Man,Isle of Man
+Israel,31.046051,34.851612,IL,ISR,Asia,Western Asia,World+News/Middle+East/Israel,Israel,Israel
+Italy,41.87194,12.56738,IT,ITA,Europe,Southern Europe,World+News/Europe/Western/Italy,Italy,Italy
+Jamaica,18.109581,-77.297508,JM,JAM,Americas,Caribbean,World+News/Caribbean/Jamaica,Jamaica,Jamaica
+Japan,36.204824,138.252924,JP,JPN,Asia,Eastern Asia,World+News/Asia/Japan,Japan,Japan
+Jersey,49.214439,-2.13125,JE,JEY,Europe,Northern Europe,?search=Jersey&lang=en&searchheadlines=1,Channel Islands,Jersey
+Jordan,30.585164,36.238414,JO,JOR,Asia,Western Asia,World+News/Middle+East/Jordan,Jordan,Jordan
+Kazakhstan,48.019573,66.923684,KZ,KAZ,Asia,Central Asia,World+News/Asia/Kazakhstan,Kazakhstan,Kazakhstan
+Kenya,-0.023559,37.906193,KE,KEN,Africa,Eastern Africa,World+News/Africa/Kenya,Kenya,Kenya
+Kiribati,-3.370417,-168.734039,KI,KIR,Oceania,Micronesia,?search=Kiribati&lang=en&searchheadlines=1,Kiribati,Kiribati
+Korea (Republic of),35.907757,127.766922,KR,KOR,Asia,Eastern Asia,World+News/Asia/Korea,South Korea,"Korea, South"
+Korea (Democratic People's Republic of),40.339852,127.510093,KP,PRK,Asia,Eastern Asia,World+News/Asia/North+Korea,North Korea,North Korea
+Kuwait,29.31166,47.481766,KW,KWT,Asia,Western Asia,World+News/Middle+East/Kuwait,Kuwait,Kuwait
+Kyrgyzstan,41.20438,74.766098,KG,KGZ,Asia,Central Asia,?search=Kyrgyzstan&lang=en&searchheadlines=1,Kyrgyzstan,Kyrgyzstan
+Laos (People's Democratic Republic),19.85627,102.495496,LA,LAO,Asia,South-Eastern Asia,?search=Lao&lang=en&searchheadlines=1,Laos,Laos
+Latvia,56.879635,24.603189,LV,LVA,Europe,Northern Europe,World+News/Europe/Northern/Latvia,Latvia,Latvia
+Lebanon,33.854721,35.862285,LB,LBN,Asia,Western Asia,World+News/Middle+East/Lebanon,Lebanon,Lebanon
+Lesotho,-29.609988,28.233608,LS,LSO,Africa,Southern Africa,?search=Lesotho&lang=en&searchheadlines=1,Lesotho,Lesotho
+Liberia,6.428055,-9.429499,LR,LBR,Africa,Western Africa,World+News/Africa/Liberia,Liberia,Liberia
+Libya,26.3351,17.228331,LY,LBY,Africa,Northern Africa,World+News/Africa/Libya,Libya,Libya
+Liechtenstein,47.166,9.555373,LI,LIE,Europe,Western Europe,?search=Liechtenstein&lang=en&searchheadlines=1,Liechtenstein,Liechtenstein
+Lithuania,55.169438,23.881275,LT,LTU,Europe,Northern Europe,World+News/Europe/Northern/Lithuania,Lithuania,Lithuania
+Luxembourg,49.815273,6.129583,LU,LUX,Europe,Western Europe,?search=Luxembourg&lang=en&searchheadlines=1,Luexmbourg,Luxembourg
+Macau,22.198745,113.543873,MO,MAC,Asia,Eastern Asia,?search=Macao&lang=en&searchheadlines=1,Macau,Macau
+Macedonia (the former Yugoslav Republic of),41.608635,21.745275,MK,MKD,Europe,Southern Europe,World+News/Europe/Western/Macedonia,Macedonia,Macedonia
+Madagascar,-18.766947,46.869107,MG,MDG,Africa,Eastern Africa,World+News/Africa/Madagascar,Madagascar,Madagascar
+Malawi,-13.254308,34.301525,MW,MWI,Africa,Eastern Africa,?search=Malawi&lang=en&searchheadlines=1,Malawi,Malawi
+Malaysia,4.210484,101.975766,MY,MYS,Asia,South-Eastern Asia,World+News/Asia/Malaysia,Malaysia,Malaysia
+Maldives,3.202778,73.22068,MV,MDV,Asia,Southern Asia,?search=Maldives&lang=en&searchheadlines=1,The Maldives,Maldives
+Mali,17.570692,-3.996166,ML,MLI,Africa,Western Africa,World+News/Africa/Mali,Mali,Mali
+Malta,35.937496,14.375416,MT,MLT,Europe,Southern Europe,World+News/Europe/Western/Malta,Malta,Malta
+Marshall Islands,7.131474,171.184478,MH,MHL,Oceania,Micronesia,noen,Marshall Islands,Marshall Islands
+Martinique,14.641528,-61.024174,MQ,MTQ,Americas,Caribbean,?search=Martinique&lang=en&searchheadlines=1,Martinique,none
+Mauritania,21.00789,-10.940835,MR,MRT,Africa,Western Africa,?search=Mauritania&lang=en&searchheadlines=1,Mauritania,none
+Mauritius,-20.348404,57.552152,MU,MUS,Africa,Eastern Africa,World+News/Africa/Mauritius,Mauritius,Mauritius
+Mayotte,-12.8275,45.166244,YT,MYT,Africa,Eastern Africa,?search=Mayotte&lang=en&searchheadlines=1,None,None
+Mexico,23.634501,-102.552784,MX,MEX,Americas,Central America,World+News/North+America/Mexico,Mexico,Mexico
+Micronesia (Federated States of),7.425554,150.550812,FM,FSM,Oceania,Micronesia,?search=Micronesia&lang=en&searchheadlines=1,Micronesia,Micronesia+ Federated States of
+Moldova (Republic of),47.411631,28.369885,MD,MDA,Europe,Eastern Europe,World+News/Europe/Eastern/Moldova,Moldova,Moldova
+Monaco,43.750298,7.412841,MC,MCO,Europe,Western Europe,?search=Martinique&lang=en&searchheadlines=1,Monaco,Monaco
+Mongolia,46.862496,103.846656,MN,MNG,Asia,Eastern Asia,World+News/Asia/Mongolia,Mongolia,Mongolia
+Montenegro,42.708678,19.37439,ME,MNE,Europe,Southern Europe,World+News/Europe/Western/Montenegro,Montenegro,Montenegro
+Montserrat,16.742498,-62.187366,MS,MSR,Americas,Caribbean,?search=Montserrat&lang=en&searchheadlines=1,Montserrat,Montserrat
+Morocco,31.791702,-7.09262,MA,MAR,Africa,Northern Africa,World+News/Africa/Morocco,Morocco,Morocco
+Mozambique,-18.665695,35.529562,MZ,MOZ,Africa,Eastern Africa,World+News/Africa/Mozambique,Mozambique,Mozambique
+Namibia,-22.95764,18.49041,NA,NAM,Africa,Southern Africa,World+News/Africa/Namibia,Namibia,Namibia
+Nauru,-0.522778,166.931503,NR,NRU,Oceania,Micronesia,?search=Nauru&lang=en&searchheadlines=1,Nauru,Nauru
+Nepal,28.394857,84.124008,NP,NPL,Asia,Southern Asia,World+News/Asia/Nepal,Nepal,Nepal
+Netherlands,52.132633,5.291266,NL,NLD,Europe,Western Europe,World+News/Europe/Western/Netherlands,Netherlands,Netherlands
+New Caledonia,-20.904305,165.618042,NC,NCL,Oceania,Melanesia,?search=New+Caledonia&lang=en&searchheadlines=1,New Caledonia,New Caledonia
+New Zealand,-40.900557,174.885971,NZ,NZL,Oceania,Australia and New Zealand,World+News/South+Pacific/New+Zealand,New Zealand,New Zealand
+Nicaragua,12.865416,-85.207229,NI,NIC,Americas,Central America,World+News/Latin+America/Central+America/Nicaragua,Nicaragua,Nicaragua
+Niger,17.607789,8.081666,NE,NER,Africa,Western Africa,World+News/Africa/Niger,Niger,Niger
+Nigeria,9.081999,8.675277,NG,NGA,Africa,Western Africa,World+News/Africa/Nigeria,Nigeria,Nigeria
+Niue,-19.054445,-169.867233,NU,NIU,Oceania,Polynesia,?search=Niue&lang=en&searchheadlines=1,Niue,Niue
+Norfolk Island,-29.040835,167.954712,NF,NFK,Oceania,Australia and New Zealand,none,none,Norfolk Island
+Northern Mariana Islands,17.33083,145.38469,MP,MNP,Oceania,Micronesia,none,N Marianas,Northern Mariana Islands
+Norway,60.472024,8.468946,NO,NOR,Europe,Northern Europe,World+News/Europe/Northern/Norway,Norway,Norway
+Oman,21.512583,55.923255,OM,OMN,Asia,Western Asia,World+News/Middle+East/Oman,Oman,Oman
+Pakistan,30.375321,69.345116,PK,PAK,Asia,Southern Asia,World+News/Asia/Pakistan,Pakistan,Pakistan
+Palau,7.51498,134.58252,PW,PLW,Oceania,Micronesia,?search=Palau+&lang=en&searchheadlines=1,Palau,Palau
+Palestine (State of),31.952162,35.233154,PS,PSE,Asia,Western Asia,World+News/Middle+East/Palestine,Palestinian area,none
+Panama,8.537981,-80.782127,PA,PAN,Americas,Central America,World+News/Latin+America/Central+America/Panama,Panama,Panama
+Papua New Guinea,-6.314993,143.95555,PG,PNG,Oceania,Melanesia,?search=Papua+New+Guinea&lang=en&searchheadlines=1,Papua New Guinea,Papua New Guinea
+Paraguay,-23.442503,-58.443832,PY,PRY,Americas,South America,?search=Paraguay&lang=en&searchheadlines=1,Paraguay,Paraguay
+Peru,-9.189967,-75.015152,PE,PER,Americas,South America,World+News/Latin+America/South+America/Peru,Peru,Peru
+Philippines,12.879721,121.774017,PH,PHL,Asia,South-Eastern Asia,World+News/Asia/Philippines,The Philippines,Philippines
+Pitcairn,-24.703615,-127.439308,PN,PCN,Oceania,Polynesia,?search=Pitcairn&lang=en&searchheadlines=1,none,Pitcairn Islands
+Poland,51.919438,19.145136,PL,POL,Europe,Eastern Europe,World+News/Europe/Eastern/Poland,Poland,Poland
+Portugal,39.399872,-8.224454,PT,PRT,Europe,Southern Europe,World+News/Europe/Western/Portugal,Portugal,Portugal
+Puerto Rico,18.220833,-66.590149,PR,PRI,Americas,Caribbean,World+News/Caribbean/Puerto+Rico,Puerto Rico,Puerto Rico
+Qatar,25.354826,51.183884,QA,QAT,Asia,Western Asia,World+News/Middle+East/Qatar,Qatar,Qatar
+Reunion,-21.115141,55.536384,RE,REU,Africa,Eastern Africa,?search=Reunion+Island&lang=en&searchheadlines=1,Reunion,None
+Romania,45.943161,24.96676,RO,ROU,Europe,Eastern Europe,World+News/Europe/Eastern/Romania,Romania,Romania
+Russian Federation,61.52401,105.318756,RU,RUS,Europe,Eastern Europe,World+News/Europe/Eastern/Russia,Russia,Russia
+Rwanda,-1.940278,29.873888,RW,RWA,Africa,Eastern Africa,World+News/Africa/Rwanda,Rwanda,Rwanda
+Saint Barthelemy,17.9,-62.8333,BL,BLM,Americas,Caribbean,?search=Saint+Barthelemy&lang=en,none,Saint Barthelemy
+Saint Helena (Ascension and Tristan da Cunha),-24.143474,-10.030696,SH,SHN,Africa,Western Africa,?search=Saint+Helena&lang=en,"St Helena, Ascen",Saint Helena
+Saint Kitts and Nevis,17.357822,-62.782998,KN,KNA,Americas,Caribbean,?search=Saint+Kitts+and+Nevis&lang=en,St Kitts and Nev,Saint Kitts and Nevis
+Saint Lucia,13.909444,-60.978893,LC,LCA,Americas,Caribbean,?search=Saint+Lucia&lang=en&searchheadlines=1,St Lucia,Saint Lucia
+Saint Martin (French part),18.0667,-63.05,MF,MAF,Americas,Caribbean,none,none,Saint Martin
+Saint Pierre and Miquelon,46.941936,-56.27111,PM,SPM,Americas,Northern America,?search=Saint+Pierre+and+Miquelon&lang=en,St Pierre and Mi,Saint Pierre and Miquelon
+Saint Vincent and the Grenadines,12.984305,-61.287228,VC,VCT,Americas,Caribbean,?search=Saint+Vincent+and+the+Grenadines&lang=en&searchheadlines=1,St Vincent/Grena,Saint Vincent and the Grenadines
+Samoa,-13.759029,-172.104629,WS,WSM,Oceania,Polynesia,World+News/South+Pacific/Samoa,Samoa,Samoa
+San Marino,43.94236,12.457777,SM,SMR,Europe,Southern Europe,?search=San+Marino&lang=en&searchheadlines=1,San Marino,San Marino
+Sao Tome and Principe,0.18636,6.613081,ST,STP,Africa,Middle Africa,?search=Sao+Tome+and+Principe&lang=a&searchheadlines=1,Sao Tome/Princip,Sao Tome and Principe
+Saudi Arabia,23.885942,45.079162,SA,SAU,Asia,Western Asia,World+News/Middle+East/Saudi Arabia,Sudi Arabia,Saudi Arabia
+Senegal,14.497401,-14.452362,SN,SEN,Africa,Western Africa,?search=Senegal&lang=a&searchheadlines=1,Senegal,Senegal
+Serbia,44.016521,21.005859,RS,SRB,Europe,Southern Europe,World+News/Europe/Western/Serbia,Serbia,Serbia
+Seychelles,-4.679574,55.491977,SC,SYC,Africa,Eastern Africa,?search=Seychelles&lang=en&searchheadlines=1,Seychelles,Seychelles
+Sierra Leone,8.460555,-11.779889,SL,SLE,Africa,Western Africa,?search=Sierra+Leone&lang=en&searchheadlines=1,Sierra Leone,Sierra Leone
+Singapore,1.352083,103.819836,SG,SGP,Asia,South-Eastern Asia,World+News/Asia/Singapore,Singapore,Singapore
+Sint Maarten (Dutch part),18.0667,-63.05,SX,SXM,Americas,Caribbean,none,none,Sint Maarten
+Slovakia,48.669026,19.699024,SK,SVK,Europe,Eastern Europe,World+News/Europe/Eastern/Slovakia,Slovakia,Slovakia
+Slovenia,46.151241,14.995463,SI,SVN,Europe,Southern Europe,World+News/Europe/Western/Slovenia,Slovenia,Slovenia
+Solomon Islands,-9.64571,160.156194,SB,SLB,Oceania,Melanesia,?search=Solomon+Islands&lang=en&searchheadlines=1,Solomon Islands,Solomon Islands
+Somalia,5.152149,46.199616,SO,SOM,Africa,Eastern Africa,World+News/Africa/Somolia,Somalia,Somalia
+South Africa,-30.559482,22.937506,ZA,ZAF,Africa,Southern Africa,World+News/Africa/South+Africa,South Africa,South Africa
+South Georgia and the South Sandwich Islands,-54.429579,-36.587909,GS,SGS,none,none,none,none,South Georgia and the South Sandwich Islands
+South Sudan,4.85,31.6,SS,SSD,Africa,Eastern Africa,World+News/Africa/South+Sudan,South Sudan,South Sudan
+Spain,40.463667,-3.74922,ES,ESP,Europe,Southern Europe,World+News/Europe/Western/Spain,Spain,Spain
+Sri Lanka,7.873054,80.771797,LK,LKA,Asia,Southern Asia,World+News/Asia/Sri+Lanka,Sri Lanka,Sri Lanka
+Sudan,12.862807,30.217636,SD,SDN,Africa,Northern Africa,World+News/Africa/Sudan,Sudan,Sudan
+Suriname,3.919305,-56.027783,SR,SUR,Americas,South America,?search=Suriname&lang=en&searchheadlines=1,Suriname,Suriname
+Svalbard and Jan Mayen,77.553604,23.670272,SJ,SJM,Europe,Northern Europe,?search=Svalbard+and+Jan+Mayen e&lang=en&searchheadlines=1,none,Svalbard
+Swaziland,-26.522503,31.465866,SZ,SWZ,Africa,Southern Africa,?search=Swaziland&lang=en&searchheadlines=1,Swaziland,Swaziland
+Sweden,60.128161,18.643501,SE,SWE,Europe,Northern Europe,World+News/Europe/Northern/Sweden,Sweden,Sweden
+Switzerland,46.818188,8.227512,CH,CHE,Europe,Western Europe,World+News/Europe/Western/Switzerland,Switzerland,Switzerland
+Syrian Arab Republic,34.802075,38.996815,SY,SYR,Asia,Western Asia,?search=Syria&lang=en&searchheadlines=1,Syria,Syria
+Taiwan (Province of China),23.69781,120.960515,TW,TWN,Asia,Eastern Asia,World+News/Asia/Taiwan,Taiwan,Taiwan
+Tajikistan,38.861034,71.276093,TJ,TJK,Asia,Central Asia,?search=Tajikistan&lang=en&searchheadlines=1,Tajikistan,Tajikistan
+Tanzania (United Republic of),-6.369028,34.888822,TZ,TZA,Africa,Eastern Africa,World+News/Africa/Tanzania,Tanzania,Tanzania
+Thailand,15.870032,100.992541,TH,THA,Asia,South-Eastern Asia,World+News/Asia/Thailand,Thailand,Thailand
+Timor-Leste,-8.874217,125.727539,TL,TLS,Asia,South-Eastern Asia,World+News/Asia/East+Timore,East Timor,East Timor
+Togo,8.619543,0.824782,TG,TGO,Africa,Western Africa,?search=Togo&lang=en&searchheadlines=1,Togo,Togo
+Tokelau,-8.967363,-171.855881,TK,TKL,Oceania,Polynesia,?search=Tokelau&lang=en&searchheadlines=1,Tokelau,Tokelau
+Tonga,-21.178986,-175.198242,TO,TON,Oceania,Polynesia,?search=Tonga&lang=en&searchheadlines=1,Tonga,Tonga
+Trinidad and Tobago,10.691803,-61.222503,TT,TTO,Americas,Caribbean,?search=Trinidad+and+Tobago&lang=en&searchheadlines=1,Trinidad/Tobago,Trinidad and Tobago
+Tunisia,33.886917,9.537499,TN,TUN,Africa,Northern Africa,?search=Tunisia&lang=en&searchheadlines=1,Tunisia,Tunisia
+Turkey,38.963745,35.243322,TR,TUR,Asia,Western Asia,World+News/Asia/Turkey,Turkey,Turkey
+Turkmenistan,38.969719,59.556278,TM,TKM,Asia,Central Asia,?search=Turkmenistan&lang=en&searchheadlines=1,Turkmenistan,Turkmenistan
+Turks and Caicos Islands,21.694025,-71.797928,TC,TCA,Americas,Caribbean,?search=Turks+and+Caicos&lang=en&searchheadlines=1,Turks and Caicos,Turks and Caicos Islands
+Tuvalu,-7.109535,177.64933,TV,TUV,Oceania,Polynesia,?search=Tuvalu&lang=en&searchheadlines=1,Tuvalu,Tuvalu
+Virgin Islands (U.S.),18.335765,-64.896335,VI,VIR,Americas,Caribbean,?search=Virgin+Islands&lang=en&searchheadlines=1,none,Virgin Islands
+Uganda,1.373333,32.290275,UG,UGA,Africa,Eastern Africa,World+News/Africa/Uganda,Uganda,Uganda
+Ukraine,48.379433,31.16558,UA,UKR,Europe,Eastern Europe,World+News/Europe/Eastern/Ukraine,Ukraine,Ukraine
+United Arab Emirates,23.424076,53.847818,AE,ARE,Asia,Western Asia,World+News/Middle+East/United+Arab+Emirates,UAE,United Arab Emirates
+United Kingdom of Great Britain and Northern Ireland,55.378051,-3.435973,GB,GBR,Europe,Northern Europe,World+News/Europe/Western/United+Kingdom,United Kingdom,United Kingdom
+United States of America,37.09024,-95.712891,US,USA,Americas,Northern America,World+News/North+America/USA,USA,United States
+Uruguay,-32.522779,-55.765835,UY,URY,Americas,South America,World+News/Latin+America/South+America/Uruguay,Uruguay,Uruguay
+Uzbekistan,41.377491,64.585262,UZ,UZB,Asia,Central Asia,?search=Uzbekistan&lang=en&searchheadlines=1,Uzebekistan,Uzebekistan
+Vanuatu,-15.376706,166.959158,VU,VUT,Oceania,Melanesia,?search=Vanuatu&lang=en&searchheadlines=1,Vanuatu,Vanuatu
+Holy See (Vatican City),41.902916,12.453389,VA,VAT,Europe,Southern Europe,?search=Vatican&lang=en&searchheadlines=1,Vatican,Holy See (Vatican City)
+Venezuela (Bolivarian Republic of),6.42375,-66.58973,VE,VEN,Americas,South America,World+News/Latin+America/South+America/Venezuela,Venezuela,Venezuela
+Viet Nam,14.058324,108.277199,VN,VNM,Asia,South-Eastern Asia,World+News/Asia/Vietnam,Vitenam,Vitenam
+Wallis and Futuna,-13.768752,-177.156097,WF,WLF,Oceania,Polynesia,none,none,Wallis and Futuna
+Western Sahara,24.215527,-12.885834,EH,ESH,Africa,Northern Africa,?search=Western+Sahara&lang=en&searchheadlines=1,Western Sahara,Western Sahara
+Yemen,15.552727,48.516388,YE,YEM,Asia,Western Asia,World+News/Middle+East/Yemen,Yemen,Yemen
+Zambia,-13.133897,27.849332,ZM,ZMB,Africa,Eastern Africa,World+News/Africa/Zambia,Zambia,Zambia
+Zimbabwe,-19.015438,29.154857,ZW,ZWE,Africa,Eastern Africa,World+News/Africa/Zimbabwe,Zimbabwe,Zimbabwe

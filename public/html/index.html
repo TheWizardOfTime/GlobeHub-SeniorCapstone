@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GlobeHub</title>
+	<link rel="stylesheet" href="css/main.css"> 
+</head>
+
+<body>
+	<div id="loader-wrapper">
+    	<div id="loader"></div>
+    	<div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+	<div id="main-container" class="large-container" style="overflow:hidden">
+<!--        <div id="instructions" style="z-index: 0; opacity: 0;">
+			<div id ="insturctions_text" style="opacity: 0.8; padding-top: 0px;"></div>
+			<div id="instructions_1" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
+			<div id="instructions_2" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
+			<div id="instructions_3" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
+		</div> -->
+		<section id="webgl"></section>
+		<div id="main-header" class="standard-header">
+			<div class="titles show">
+				<div class="title">GlobeHub</div>
+					<div class="sub-title">
+						<span id="interactive">Interactive</span>
+						<span id="world">World</span>
+						<span id="news">News</span>
+				</div>
+			</div>
+			<div id="location-container">
+				<div id="country"><h1 class="head">location:<span id="location-value"></span></h1></div>
+				<div id="coordinates"><h1 class="head">Lat,Lng:<span id="coordinate-value"></span></h1></div> 
+			</div>
+			<div id="button-grid" class="button-container">
+				<div id="user-buttons" class="button-layout">
+					<button id="toggle-news" class="action-button slide">NEWS</button>
+					<button id="toggle-watch" class="action-button slide">WATCH</button>
+					<button id="toogle-info" class="action-button slide">PROFILE</button>
+					<button id="toggle-pocket" class="action-button slide">POCKET</button>
+				</div>
+			</div>
+			<span id="date">DATE:<span id="date-time"></span></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
+		</div>
+		<div id="app-container" class="large-container">
+			<!-- <div id="news-main-container">
+				<div id="news-container"> -->
+					<div id="feed-container" style="overflow-y:scroll;">
+						<div id="feed-header">
+							<h1 id="news-label" class="head">news-location:<span id="news-value"></span></h1> 
+						</div>
+					</div>
+					<div id="watch-container" style="overflow-y:scroll;">
+						<h1 id="watch-header" class="head">watch:</h1>
+						<ul id="watches">
+						</ul>
+					</div>
+<!-- 				</div>
+			</div> -->
+<!-- 			<div id="pocket-main-container" class="slide-in"> -->
+				<div id="pocket-container" style="overflow-y:scroll;">
+						<h1 class="head">pocket</h1>
+						<ul id="pockets">
+						</ul>
+				</div>
+<!-- 			</div> -->
+		</div>
+	</div>
+
+
+<!-- ============= Shaders for LookUp Map and Stuff ==============  -->
+
+<script id="globeVertexShader" type="x-shader/x-vertex">
+varying vec3 vNormal;
+varying vec2 vUv;
+void main()
+{
+	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0);
+	vNormal = normalize( normalMatrix * normal );
+	vUv = uv;
+}
+</script>
+
+<script id="globeFragmentShader" type="x-shader/x-fragment">   
+uniform sampler2D mapIndex;
+uniform sampler2D lookup;
+uniform sampler2D outline;
+uniform sampler2D blendSurface;
+varying vec3 vNormal;
+varying vec2 vUv;
+void main() 
+{
+	vec4 mapColor = texture2D( mapIndex, vUv );    
+	float indexedColor = mapColor.y;       
+	vec2 lookupUV = vec2( indexedColor, 0.0 );
+	vec4 lookupColor = texture2D( lookup, lookupUV );                              
+	vec4 outlineColor = texture2D( outline, vUv );
+	vec4 blendSurfaceColor = texture2D( blendSurface, vUv );
+	// vec4 blendSpecularColor = texture2D( blendSpecular, vUv );
+	// vec4 blendBumpColor = texture2D( blendBump, vUv );
+	// if (outlineColor.x > 0.1) outlineColor = vec4(1.0,1.0,1.0,1.0);
+
+	
+	gl_FragColor = 0.5 * outlineColor + 1.0 * lookupColor + 0.5 * blendSurfaceColor;
+}
+</script>
+
+<!-- =================================================================================  -->
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script src="./js/three2.min.js"></script>
+<script src="./js/THREEX/threex.dilategeometry.js"></script>
+<script src="./js/THREEX/threex.atmospherematerial.js"></script>
+<script src="./js/THREEX/threex.geometricglowmesh.js"></script>
+<script src="./js/Detector.js"></script>		
+<script src="./js/OrbitControls.js"></script>
+<script src="./js/models.js"></script>
+<script src="./js/textures.js"></script>
+<script src="./js/pagebuilder.js"></script>
+<script src="./js/data.js"></script>
+<script src="./js/calculations.js"></script>
+<script src="./js/client-handler.js"></script>
+<script src="./js/main.js"></script> 
+
+</body>
+</html>

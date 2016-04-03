@@ -1,0 +1,499 @@
+
+/* ==========================================================================
+   Main Color Schemes and fonts for website
+   ========================================================================== */
+
+/* Main blue hex: 7efaff */
+/* Orange hex: ff8340 */
+
+@font-face { font-family: 'Industria'; src: url('./fonts/ufonts.com_industria-solid.ttf');}
+@font-face { font-family: 'EurostileLTStd-Ex2'; src: url('./fonts/eurostileltstd-ex2.ttf');}
+@font-face { font-family: 'Borda'; src: url('./fonts/Borda.ttf'); }
+@font-face { font-family: 'Borda-Light'; src: url('./fonts/Borda Light.ttf')}
+@font-face { font-family: 'Borda-Bold'; src: url('./fonts/Borda Bold.ttf')}
+@font-face { font-family: 'Borda-Medium'; src: url('./fonts/Borda Medium.ttf')}
+
+
+/* ==========================================================================
+   Custom styles 
+   ========================================================================== */
+
+html, body {  width:100%;height:100%; background-color: #000000}
+html,body,ul,section{margin:0;padding:0;bottom:0;  font-size:12px;}
+canvas {  width:100%; height:100%; font-family: 'Borda', sans-serif;}
+body{font-family: 'Borda', sans-serif; color:#7efaff;}
+a { font-size:12px;}
+section { display:none; opacity: .8; position:absolute;}
+a { outline: 0;}
+
+
+/* ==========================================================================
+   Pre-loader for home page
+   ========================================================================== */
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 450px;
+    height: 450px;
+    margin: -225px 0 0 -2px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: #7efaff;
+
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+
+    z-index: 1001;
+}
+
+    #loader:before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: #ff8340;
+
+        -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border-radius: 50%;
+        border: 10px solid transparent;
+        border-top-color: #7efaff;
+
+        -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+          animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+
+    @-webkit-keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+    @keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+
+    #loader-wrapper .loader-section {
+        position: fixed;
+        top: 0;
+        width: 51%;
+        height: 100%;
+        background: #222222;
+        z-index: 1000;
+        -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(0);  /* IE 9 */
+        transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
+    }
+
+    #loader-wrapper .loader-section.section-left {
+        left: 0;
+    }
+
+    #loader-wrapper .loader-section.section-right {
+        right: 0;
+    }
+
+    /* Loaded */
+    .loaded #loader-wrapper .loader-section.section-left {
+        -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateX(-100%);  /* IE 9 */
+                transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader-wrapper .loader-section.section-right {
+        -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateX(100%);  /* IE 9 */
+                transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+
+-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+    
+    .loaded #loader {
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;  
+                transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+        visibility: hidden;
+
+        -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateY(-100%);  /* IE 9 */
+                transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.3s 1s ease-out;  
+                transition: all 0.3s 1s ease-out;
+    }
+
+/* ==========================================================================
+    Custom classes for home page
+   ========================================================================== */
+
+/*-------------------------
+    Buttons and Toggles
+--------------------------*/
+
+.action-button {
+
+    background-color:transparent;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #7efaff;
+    cursor:pointer;
+    color:#7efaff;
+    font-family:'EurostileLTStd-Ex2',sans-serif;
+    font-size:12px;
+    padding:10px 20px;
+    -webkit-transition-duration: 0.4s; !* Safari *!
+    transition-duration: 0.4s;
+    text-decoration:none;
+}
+
+.action-button:hover {
+    color: #ff8340;
+    background-color: #000;
+}
+
+#toggle-news{
+    position: relative;
+}
+
+#toggle-watch{
+    position: relative;
+}
+
+.button-pocket {
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #7efaff;
+    cursor:pointer;
+    color:#7efaff;
+    font-family:'EurostileLTStd-Ex2',sans-serif;
+    font-size:12px;
+    padding:10px 20px;
+}
+
+/*---------------- 
+    Containers 
+------------------*/
+
+.large-container { 
+    position:relative; 
+    width:100%; 
+    height:100%; 
+    margin: 5px;
+}
+.sub-container {
+    border: 2px solid #7efaff;
+    border-radius:15px;  
+    background-color: rgba( 0 , 0 , 0 , 0.4); 
+    box-shadow: 0px 0px 100px rgba(126,250,255,.6);
+    margin:5px;
+} 
+
+/*-----------------
+    Main Header
+------------------*/
+
+#main-header {
+    background-color: rgba( 0 , 0 , 0 , 0.4);
+    border: 2px solid rgba(126,250,255,.4);
+    border-radius:15px;  
+    box-shadow: 0px 0px 100px rgba(126,250,255,.6); 
+}
+#location-container {
+    width:33%;
+    top:25%;
+    position:absolute;
+    margin: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#location-value, #coordinate-value, #current-country{
+    color: #ff8340;
+}
+
+#date{
+    position:absolute;
+    margin: 5px;
+    right:30%;
+    top:70%;
+}
+
+.standard-header { 
+    position: absolute; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:7%; 
+    z-index:500;
+}
+
+.standard-header .titles{ 
+    float:left; 
+    margin-left:5px;
+    font-family:'EurostileLTStd-Ex2',sans-serif;
+    text-align:center; opacity:0;
+}
+.standard-header .titles.show{ 
+    position:relative; 
+    width:33%;
+    z-index:500; 
+    opacity:1;
+}
+.standard-header .title{ 
+    font-family:'EurostileLTStd-Ex2',sans-serif; 
+    width:100%; 
+    height:60%; 
+    font-size:90px; 
+    letter-spacing:15px; 
+    line-height:100%; 
+    text-transform: uppercase; 
+    text-shadow: -3px 0 0 rgba(255,131,64,.3),  
+    3px 0 0 rgba(126, 250, 255, .2);
+    opacity:.8;
+    margin-bottom:1px;
+}
+.standard-header .sub-title { 
+    padding-top:5px;font-size:15px; 
+    letter-spacing:1px; width:100%; 
+    border-top:1px solid rgba(126, 250, 255, .4); 
+    text-transform: uppercase; 
+    font-family:'EurostileLTStd-Ex2',sans-serif; 
+    text-shadow: 0px 0px 5px #7efaff; 
+    opacity:.8; text-align:justify; 
+    width:100%;
+}
+.standard-header .sub-title:after { 
+    content: ""; 
+    display: inline-block; 
+    width: 100%; 
+}
+
+/*-------------------
+    Button Layout
+--------------------*/
+
+.button-container {
+    width:33%;
+    right:0;
+    top:25%;
+    position:absolute;
+    margin:5px;    
+}
+
+.button-container .button-layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*---------------------
+    Headers
+-----------------------*/
+.head{
+    margin:2px; 
+    font-family:'EurostileLTStd-Ex2',sans-serif;
+    font-size: 10px; 
+    text-transform:uppercase; 
+    margin-bottom:1px;
+    opacity:1;
+}
+
+#feed-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#news-label {
+    width:100%;
+    font-family:'EurostileLTStd-Ex2',sans-serif;
+    font-size: 15px; 
+    text-transform:uppercase; 
+    margin-bottom:2px;
+    opacity:1;
+}
+
+
+/*-------------------
+    Error Message
+---------------------*/
+
+.module-error{
+    position:relative;
+    font-family: 'Borda', sans-serif; 
+    color: white;
+    font-size: 18px;
+    width: 50%;
+    margin: 0 auto; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 200px;
+    height: 200px;
+}
+
+/*-----------------------
+    Overall Container
+-------------------------*/
+
+#main-container{
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin:0;
+}
+/*---------------------------------
+    Main Container For News CSS
+-----------------------------------*/
+#news-main-container {
+    position:absolute;
+    border:2px;
+    border-radius:15px; 
+    width: 33%; 
+    height: 95%;
+    top:150px;
+    bottom:100px;
+}
+    #news-container {
+        position:absolute;
+        display:flex;
+        flex-direction:column;
+        width: 100%; 
+        height: 100%;
+        text-decoration:none;
+        opacity: 1.0; 
+        z-index: 500;
+/*        transform: translateX(-95%);
+        -webkit-transform: translateX(-95%);*/
+    }
+
+    /*--------------------------------
+        News Information and Stuff
+    ----------------------------------*/
+
+            #time{color:#ff8340 ;}
+            #article{color:#7efaff; text-decoration-line: none;}
+            #publisher{color:#ff8340 ;}
+            #source{color:#7efaff ;}
+            #origin{color:#7efaff ;}
+
+    /*--------------------------------*/
+
+        #show-news{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+        #feed-container{
+            font-family:'EurostileLTStd-Ex2',sans-serif; 
+            position:absolute;
+            z-index: 500;
+            top:7.2%; 
+            width: 33%;
+            height: 65%;
+            left: 0px;
+            overflow: scroll;
+            border-bottom: 2px solid rgba(126,250,255,.4);
+            background-color: rgba( 0 , 0 , 0 , 0.4);
+            border: 2px solid rgba(126,250,255,.4);
+            border-radius:15px;  
+            box-shadow: 0px 0px 100px rgba(126,250,255,.6); 
+        }
+        #watch-container{
+            font-family:'EurostileLTStd-Ex2',sans-serif; 
+            position:absolute;
+            z-index: 500;
+            top:72.5%;
+            width: 33%; 
+            height: 30%;
+            left: 0px;
+            overflow: scroll;
+            border-bottom: 2px solid rgba(126,250,255,.4);
+            background-color: rgba( 0 , 0 , 0 , 0.4);
+            border: 2px solid rgba(126,250,255,.4);
+            border-radius:15px;  
+            box-shadow: 0px 0px 100px rgba(126,250,255,.6);  
+        }
+
+/*----------------------------------------
+    Main container for Information CSS
+------------------------------------------*/
+#pocket-main-container {
+    position:absolute;
+    right:0;
+    top: 60%;
+    width: 33%; 
+    height: 100%;  
+}
+    #pocket-container {
+        position: fixed;
+        top: 60%;
+        width: 33%; 
+        height: 100%; 
+        opacity: 1.0; 
+        z-index: 500;
+        right:0px; 
+        border: 2px solid rgba(126,250,255,.4);
+        border-radius:15px;   
+        background-color: rgba( 0 , 0 , 0 , 0.4); 
+        box-shadow: 0px 0px 70px rgba(126,250,255,.6);
+        margin:2px;
+    }
+
+/*profiles*/
+#profile{}
+
+/*how to use*/
+#instructions{}
+
+/* webgl */
+#webgl{ z-index:10; display:block; width:100%; height:100%; background-color: #000; transition:all 2s;}
+#webgl.show { opacity:1;}
