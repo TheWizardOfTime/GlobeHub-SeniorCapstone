@@ -8,9 +8,11 @@
  *
  *	http://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
  *  http://mherman.org/blog/2015/01/31/local-authentication-with-passport-and-express-4/#.VvCRmRIrKu5
+ *  http://www.transistor.io/getting-started-with-node-express-and-mongodb.html
  *
- *  All credit @tommcfarlin , https://github.com/tommcfarlinc & @mjhea0 , https://github.com/mjhea0.
- *
+ *  @tommcfarlin , https://github.com/tommcfarlinc
+ *	@mjhea0 , https://github.com/mjhea0
+ *	@jdorweiler, https://github.com/jdorweiler
  */
 
 var express = require('express');
@@ -60,13 +62,6 @@ module.exports = function( passport ) {
 	router.get('/home', isAuthenticated, function(req, res){
 		res.render('index', { user: req.user });
 	});
-
-	/* POST to Home Page - i.e save stuff to data base */
-
-	router.post('/home', function(req, res) {
-
-
-	})
 
 	/* Handle Logout */
 	router.get('/signout', function(req, res) {

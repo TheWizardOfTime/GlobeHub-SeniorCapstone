@@ -15,7 +15,10 @@ var http = require('http');
 var path = require('path');
 var flash = require('connect-flash');
 var passport = require('passport');
-var expressSession = require('express-session')
+var cookie    = require('cookie');
+var signature = require('cookie-signature');
+var expressSession = require('express-session');
+var MongoStore = require('connect-mongo')(expressSession);
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -27,7 +30,11 @@ var test = require('./local_modules/dombatch');
 var webscraper = require('./local_modules/webscraper');
 var initPassport = require('./passport/init');
 
-var app = express();
+var app = express(),
+    name   = 'connect.sid',
+    secret = '<mysecret>',
+    store = new MongoStore({ mongooseConnection: db });
+
 app.io = require('socket.io')();
 
 /** Configure Express Application Server our Web-Application **/
@@ -44,8 +51,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/* configuring passport */
-app.use( expressSession( { secret: '<mysecret>', saveUninitialized: true, resave: true } ) );
+/* configuring session */
+app.use( expressSession( 
+                        { 'secret': secret, 
+                          'name' : name,
+                          'saveUninitialized' : true, 
+                          'resave': true , 
+                          'store' : store
+                        }));
+
+/* authenticate user with passport */
 app.use( passport.initialize( ) );
 app.use( passport.session( ) );
 
@@ -58,7 +73,7 @@ initPassport( passport );
 /* set the route to root becuase this should be a SPA ( Single-Page-Application ) */
 app.use('/', routes);
 
-/* have our application connect to the locally running MongoDB instance  */
+/* have our application connect to the locally running MongoDB instance */
 app.use( function( req , res , next ){
   req.db = db;
   next( );
@@ -95,11 +110,36 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
+var PocketProvider = require('./PocketProvider').PocketProvider;
+var WatchProvider = require('./WatchProvider').WatchProvider;
+var ArticleProvider = require('./ArticleProvider').ArticleProvider;
+
 /** Start Listening with socket.io **/
 
 app.io.on( 'connection', function(socket) {
 
+  var user;
+
   console.log('Web-Socket Connected');
+
+  /**
+   *  Hacky Solution to getting the session ID, to correspond with the User Id... Found on Stackoverflow
+   */
+
+  if (socket.handshake && socket.handshake.headers && socket.handshake.headers.cookie) {
+    var raw = cookie.parse(socket.handshake.headers.cookie)[name];
+    if (raw) {
+      // The cookie set by express-session begins with s: which indicates it
+      // is a signed cookie. Remove the two characters before unsigning.
+      socket.sessionId = signature.unsign(raw.slice(2), secret) || undefined;
+    }
+  }
+  if (socket.sessionId) {
+    store.get(socket.sessionId, function(err, session) {
+      user = session.passport.user;
+      console.log(user);
+    });
+  }
 
     /* validation of web-scraped urls */
 
@@ -150,5 +190,15 @@ app.io.on( 'connection', function(socket) {
         });
       });
     });
-  });   
+  });
+
+
+  socket.on('make-pocket' , function( data ) {
+
+    console.log(app);
+
+    var pocket_col = db.collection('pockets');
+    var current_user = db.collection('users').find( { _id:user });
+
+  });
 });

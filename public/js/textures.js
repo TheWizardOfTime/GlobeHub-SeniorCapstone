@@ -5,49 +5,34 @@ var fileArray = [   {name :'earthSurface' , url : 'earth_no_ice_clouds.jpg', mes
                     {name :'earthCloud', url : 'earth_clouds.png', message : 'textureing clouds'},
                     {name :'earthOutline', url: 'earth_out_line.png', message: 'textureing outline'},
                     {name :'earthGreyIndex', url: 'index_shifted_grey.png', message: 'textureing greyscale index'},
-                    // {name :'earthCultureTex', url : 'earth_cultural_black.png', message :'textureing '},
-                    // {name :'earthIndexedTex', url : 'earth_index.jpg', message :'textureing Country Projections'},
                     {name :'moonSurface', url : 'moon.jpg', message :'textureing lunar surface'},
                     {name :'moonBump', url : 'moon_bump.jpg', message : 'textureing lunar contour'},
                     {name :'skyDome', url : 'galaxy_3.png', message : 'textureing sky box'},
                     {name :'lensflare0', url :'lensflare0.png', message : ' flaring...' },
                     {name :'lensflare2', url :'lensflare2.png', message : ' flaring...' },
                     {name :'lensflare3', url :'lensflare3.png', message : ' flaring...' },
-
-                    ];
+                ];
 
 Object.size = function( obj ) {
-
    var size = 0, key;
-
    for ( key in obj ) {
-
        if ( obj.hasOwnProperty( key ) ) size++;
-
    }
-
    return size;
-
 };
 
 function loadTextures( callback ) {
-
     console.log( 'Loading Textures...' ) 
-
     var manager = new THREE.LoadingManager();
-
     manager.onProgress = function ( item, loaded, total ) {
-
         console.log( item, loaded, total );
 
     };
-
     var loader = new THREE.TextureLoader( manager );
     loader.crossOrigin = '';
 
     var promiseArray = [],
         path = './textures/';
-
     fileArray.forEach( function ( fileOBJ ) {
 
         promiseArray.push ( new Promise( function ( resolve , reject ) {
@@ -111,5 +96,5 @@ function loadTextures( callback ) {
             function ( error ) {
 
                 callback( error )
-        } )
+        })
 }

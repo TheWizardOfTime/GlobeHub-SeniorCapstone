@@ -55,7 +55,7 @@ function start( ) {
           console.log(applicationData.lookupData)
 
           initScene( );
-          animate( );
+          // animate( );
 
         });
       });
@@ -75,12 +75,12 @@ function initScene( ) {
   renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
   renderer.setSize( width , height );
 
-  scene.add( new THREE.AmbientLight( 0x333333 ) );
+  scene.add( new THREE.AmbientLight( 0xffffff ) );
 
-  var dirLight = new THREE.DirectionalLight( 0xffffff ,  0.05);
-  dirLight.position.set( 10 , 6 , 10 );
-  dirLight.color.setHSL( 0.1, 0.7, 0.5 );
-  scene.add( dirLight );
+  // var dirLight = new THREE.DirectionalLight( 0xffffff ,  0.05);
+  // dirLight.position.set( 10 , 6 , 10 );
+  // dirLight.color.setHSL( 0.1, 0.7, 0.5 );
+  // scene.add( dirLight );
 
   var light = new THREE.PointLight( 0xffffff , 1.5 );
   light.position.set( 8 , 5 , 8);
@@ -92,13 +92,13 @@ function initScene( ) {
 
   scene.add(sunFlare);
 
-  // pivot = new THREE.Object3D();
-  // moon = models.moon.surface;
+  pivot = new THREE.Object3D();
+  moon = models.moon.surface;
   earth = models.earth.surface;
 
   scene.add(earth)
-  // earth.add(pivot)
-  // pivot.add(moon)
+  earth.add(pivot)
+  pivot.add(moon)
   
   clouds = models.earth.clouds;
   // culture = models.earth.culture;
@@ -112,49 +112,34 @@ function initScene( ) {
 
   controls = new THREE.OrbitControls( camera );
 
-  webglEl.appendChild(renderer.domElement);
-  // document.body.appendChild( stats.domElement );
+  // webglEl.appendChild(renderer.domElement);
+  // // document.body.appendChild( stats.domElement );
 
-  webglEl.addEventListener( 'click' , onLeftClick , false );
-  webglEl.addEventListener( 'dblclick' , onLeftDoubleClick , false );
-  webglEl.addEventListener( 'mousemove' , onMouseMove, false );
+  // webglEl.addEventListener( 'click' , onLeftClick , false );
+  // webglEl.addEventListener( 'dblclick' , onLeftDoubleClick , false );
+  // webglEl.addEventListener( 'mousemove' , onMouseMove, false );
 
-  mapCanvas = document.createElement('canvas');
-  mapCanvas.width = 4096;
-  mapCanvas.height = 2048;
-  mapContext = mapCanvas.getContext('2d');
-  var imageObj = new Image();
+  // mapCanvas = document.createElement('canvas');
+  // mapCanvas.width = 4096;
+  // mapCanvas.height = 2048;
+  // mapContext = mapCanvas.getContext('2d');
+  // var imageObj = new Image();
 
-  imageObj.onload = function() 
-  {
-        mapContext.drawImage(imageObj, 0, 0);
-  };
-    imageObj.src = './textures/index_shifted_grey.png';
+  // imageObj.onload = function() 
+  // {
+  //       mapContext.drawImage(imageObj, 0, 0);
+  // };
+  //   imageObj.src = './textures/index_shifted_grey.png';
 
-  render();
+  // animate();
 
   $(document).ready(function() {
     $('body').addClass('loaded');
     setTimeout( function() {
       console.log('removed loader');
       $("#loader-wrapper").remove();
-    }, 10000);
+    }, 1000);
   });
-
-}
-
-function updateFull( ){
-
-  earth.rotation.y += 0.0005;
-  // culture.rotation.y+= 0.0005;
-  clouds.rotation.y -= 0.0002;
-  // moon.rotation.y +=0.0005;
-  // pivot.rotation.y += 0.0005;
-
-  controls.update( );
-
-  if( camera.position.length() < 300); camera.position.setLength(300);
-  if( camera.position.length() > 1000); camera.position.setLength(1000);
 
 }
 
@@ -164,17 +149,31 @@ function render() {
   // earth.rotation.y += 0.0005;
   // earth.position
   // culture.rotation.y+= 0.0005;
-  clouds.rotation.y -= 0.0002;
+  clouds.rotation.y -= 0.0003;
   // moon.rotation.y +=0.0005;
-  // pivot.rotation.y += 0.0005;
+  pivot.rotation.y += 0.0005;
   controls.update( );
   if (camera.position.length() < 2) camera.position.setLength(2);
-  if (camera.position.length() > 10) camera.position.setLength(10); 
+  if (camera.position.length() > 10) camera.position.setLength(10);
+  // requestAnimationFrame( animate ); 
   renderer.render( scene , camera );
 
 }
 
 function animate( ) {
+
+  // // renderer.clear();
+  // // earth.rotation.y += 0.0005;
+  // // earth.position
+  // // culture.rotation.y+= 0.0005;
+  // clouds.rotation.y -= 0.0003;
+  // // moon.rotation.y +=0.0005;
+  // // pivot.rotation.y += 0.0005;
+  // controls.update( );
+  // if (camera.position.length() < 2) camera.position.setLength(2);
+  // if (camera.position.length() > 10) camera.position.setLength(10); 
+
+  renderer.render( scene , camera );
   requestAnimationFrame( animate );
   render();
 }
@@ -207,7 +206,9 @@ function onLeftClick( e ) {
       var y = intersections[ 0 ].point.y;
       var z = intersections[ 0 ].point.z;
 
-      // markerPos = marker.position.set( x , y , z );
+      findPoint( applicationData.coordinateData.countries , coords, function( info ) {
+         $('#selected-country').text(" "+info.name);
+      });
     }
   }
 }
@@ -237,15 +238,10 @@ function onLeftDoubleClick( e ) {
 
         findPoint( applicationData.coordinateData.countries , LatLngFromPoint(x,y,z,rad) , function ( info ) {
 
-            $("news-value").text(info.name);
-
-            console.log('clicked' , info)
-
+            $('#selected-country').text(" "+info.name);
             socket.emit( 'send-info' , { 'info' : info } );
 
-        } );
-
-        // markerPos = models.marker.position.set( x , y , z );
+        });
     }
   }
 }
@@ -278,14 +274,12 @@ function onMouseMove( e ) {
         var lat = coords.lat;
         var lng = coords.lng;
 
-        $('#location-value').text(" "+info.name);
-        $('#coordinate-value').text(" "+lat.toFixed(5) +", "+lng.toFixed(5));
+        $('#current-country').text(" "+info.name);
+        $('#current-coordinates').text(" "+lat.toFixed(5) +", "+lng.toFixed(5));
       });
-
-      world_coords = LatLngFromPoint( x , y , z , rad );
     } else {
-        $('#location-value').text("");
-        $('#coordinate-value').text("");
+        $('#current-country').text("");
+        $('#current-coordinates').text("");
 
     }
   }
@@ -306,12 +300,10 @@ socket.on('validation', function ( data ) {
     error.className = 'module-error';
 
     error.innerHTML = 'Globehub is currently undergoing maintainance so <br /> in the mean time use <a href="http://google.com">google</a>to look find any news you want.<br /> Thank you for your patronage!';
-
     var page = document.getElementById('container');
     page.appendChild( error );
-
+    
    }
-
 });
 
 socket.on('sent' , function ( data ) {
@@ -330,8 +322,6 @@ socket.on( 'receive-info' , function ( data ) {
     }
 
     $('#feed-container').append( html );
-    console.log('NAME:'+data.info.name)
-    $('#news-value').text(data.info.name);
 
    });
   

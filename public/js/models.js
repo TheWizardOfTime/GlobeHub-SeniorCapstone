@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////
-//   A THREE loader module for this application  //
+//  A THREE loader module for this application   //
 ///////////////////////////////////////////////////
 
 var textureMap;
@@ -98,29 +98,22 @@ function makeEarthCloudSphere( r , s , callback ) {
         
     });
 
+    // var cloudMaterial = new THREE.ShaderMaterial( {
+    //     {
+    //         uniforms:
+    //         {
+    //             image:textureMap['earthCloud'];
+    //         },
+    //         vertexShader: document.getElementById('cloudVertexShader').textContent,
+    //         fragmentShader: document.getElementById('cloudFragmentShader').textContent
+    //     }
+    // })
+
     if(callback && typeof(callback) === "function" && ( cloudGeo !== 'undefined' && cloudMaterial !== 'undefined' ) ) {
         // console.log('clouds!')
         callback(new THREE.Mesh( cloudGeo , cloudMaterial ) );
     }
 }
-
-// function makeEarthLookup( r , s , callback ) {
-
-//     var lookUpSphere;
-//     var mapUniforms;
-
-//     lookupModelHelper( r , s , textureMap , function ( lookupMesh , uniforms ) {
-
-//         lookUpSphere = lookupMesh;
-//         mapUniforms = uniforms;
-
-//     } )
-
-//     if(callback && typeof(callback) === "function" && ( lookUpSphere instanceof THREE.Object3D ) && mapUniforms !== 'undefined' ) {
-//         // console.log('look up!')
-//         callback( lookUpSphere , mapUniforms );
-//     }
-// } 
 
 function makeMoonSurface ( r , s , b , callback ) {
 
@@ -270,8 +263,6 @@ function createSun( callback ) {
     var flareColor = new THREE.Color( 0xffffff );
     flareColor.setHSL( 0.55, 0.9, 0.5 + 0.5 );
 
-    // 0.55, 0.9, 0.5
-
     var lensFlareSun = new THREE.LensFlare( textureMap['lensflare0'], 700, 0.0, THREE.AdditiveBlending, flareColor );
 
     lensFlareSun.add( textureMap['lensflare2'], 512, 0.0, THREE.AdditiveBlending );
@@ -300,17 +291,11 @@ function modelsCheck ( modelsObject , callback ) {
 } 
 
 Object.size = function( obj ) {
-
    var size = 0, key;
-
    for ( key in obj ) {
-
        if ( obj.hasOwnProperty( key ) ) size++;
-
    }
-
    return size;
-
 };
 
 function loadModels( o , tm , callback ) {
@@ -326,24 +311,15 @@ function loadModels( o , tm , callback ) {
     var bump = o.bump;
 
     createEarth( radius , segments , bump , function ( earth ) {
-
         createMoon( radius , segments , bump , function ( moon ) {
-
             mod.moon = moon;
             mod.earth = earth;
-
             createSkyDome( function ( universe ) { 
-
                 mod.universe = universe ;
-
                 createSun( function ( sunFlare ) { 
-
                     mod.sunFlare =  sunFlare ;
-
                     modelsCheck ( mod, function ( modelsOBJ, result ) {
-
                         if( callback && typeof( callback ) === "function" && result ) callback( modelsOBJ );
-
                     });
                 });
             });

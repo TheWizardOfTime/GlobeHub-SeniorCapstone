@@ -1,3 +1,7 @@
+/**
+ * Some functions for calculating latitude and longitude as well as relative position of countries
+ */
+
 function getDistanceLatLng (p1, p2) {
 
     var d_lat = Math.abs(p1.lat - p2.lat);

@@ -1,20 +1,17 @@
 <!doctype html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GlobeHub</title>
 	<link rel="stylesheet" href="css/main.css"> 
 </head>
-
 <body>
 	<div id="loader-wrapper">
     	<div id="loader"></div>
     	<div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
-
 	<div id="main-container" class="large-container" style="overflow:hidden">
 <!--        <div id="instructions" style="z-index: 0; opacity: 0;">
 			<div id ="insturctions_text" style="opacity: 0.8; padding-top: 0px;"></div>
@@ -22,7 +19,7 @@
 			<div id="instructions_2" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
 			<div id="instructions_3" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
 		</div> -->
-		<section id="webgl"></section>
+		<!-- <section id="webgl"></section> -->
 		<div id="main-header" class="standard-header">
 			<div class="titles show">
 				<div class="title">GlobeHub</div>
@@ -33,8 +30,9 @@
 				</div>
 			</div>
 			<div id="location-container">
-				<div id="country"><h1 class="head">location:<span id="location-value"></span></h1></div>
-				<div id="coordinates"><h1 class="head">Lat,Lng:<span id="coordinate-value"></span></h1></div> 
+				<div id="selected-country"><h1 class="label">selected:<span id="selected-value"></span></h1></div>
+				<div id="current-country"><h1 class="label">location:<span id="location-value"></span></h1></div>
+				<div id="current-coordinates"><h1 class="label">Lat,Lng:<span id="coordinate-value"></span></h1></div> 
 			</div>
 			<div id="button-grid" class="button-container">
 				<div id="user-buttons" class="button-layout">
@@ -44,31 +42,56 @@
 					<button id="toggle-pocket" class="action-button slide">POCKET</button>
 				</div>
 			</div>
-			<span id="date">DATE:<span id="date-time"></span></span>
-            <script type="text/javascript">window.onload = date_time('date_time');</script>
 		</div>
 		<div id="app-container" class="large-container">
-			<!-- <div id="news-main-container">
-				<div id="news-container"> -->
-					<div id="feed-container" style="overflow-y:scroll;">
-						<div id="feed-header">
-							<h1 id="news-label" class="head">news-location:<span id="news-value"></span></h1> 
-						</div>
+
+			<!-- Dialog Boxes! -->
+
+			<div class="dialog" id="addto-pocket-form">
+				<form class="form-pocket">
+					<label for="pocket-form-list">Available Pockets:</label>
+					<div align="center"id="pocket-list"></div>
+					<div align="center">
+						<button type="submit" id="addto-button" class="action-button">Add</button>
 					</div>
-					<div id="watch-container" style="overflow-y:scroll;">
-						<h1 id="watch-header" class="head">watch:</h1>
-						<ul id="watches">
-						</ul>
+				</form>
+			</div>
+			<div class="dialog" id="create-pocket-form">
+				<form class="form-pocket">
+					<label for="pocket-sumbmission">Create Pocket:</label>
+					<div align="center"id="pocket-submission">
+						<input type="text" name="pocket-name" placeholder="Pocket Name" value="pocketname" required autofocus class="form-control">
 					</div>
-<!-- 				</div>
-			</div> -->
-<!-- 			<div id="pocket-main-container" class="slide-in"> -->
-				<div id="pocket-container" style="overflow-y:scroll;">
-						<h1 class="head">pocket</h1>
-						<ul id="pockets">
-						</ul>
+					<div align="center">
+						<button type="submit" id="create-button" class="action-button">Create</button>
+					</div>
+				</form>
+			</div>
+
+			<!-- End of Dialog Boxes! -->
+			<div id="feed-container" style="overflow-y:scroll;">
+				<div class="sub-header">
+					<h1 class="label" class="head">news:</h1>
+					<input type="button" id="addto-pocket-button" value="Add to Pocket" class="action-button">
 				</div>
-<!-- 			</div> -->
+			</div>
+			<div id="watch-container" style="overflow-y:scroll;">
+				<div class="sub-header">
+					<h1 id="watch-header" class="head">watch:</h1>
+					<input type="button" id="watch-selected-button" value="Watch Selected" class="action-button">
+				</div>
+				<ul id="watches">
+				</ul>
+			</div>
+			<div id="pocket-container" style="overflow-y:scroll;">
+				<div class="sub-header">
+					<h1 class="label">pocket:</h1>
+					<input type="button" id="create-pocket-button" class="action-button" value="Create">
+					<input type="button" id="remove-pocket-button" class="action-button" value="Remove">
+					<ul id="pockets">
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -101,10 +124,6 @@ void main()
 	vec4 lookupColor = texture2D( lookup, lookupUV );                              
 	vec4 outlineColor = texture2D( outline, vUv );
 	vec4 blendSurfaceColor = texture2D( blendSurface, vUv );
-	// vec4 blendSpecularColor = texture2D( blendSpecular, vUv );
-	// vec4 blendBumpColor = texture2D( blendBump, vUv );
-	// if (outlineColor.x > 0.1) outlineColor = vec4(1.0,1.0,1.0,1.0);
-
 	
 	gl_FragColor = 0.5 * outlineColor + 1.0 * lookupColor + 0.5 * blendSurfaceColor;
 }
@@ -125,8 +144,8 @@ void main()
 <script src="./js/pagebuilder.js"></script>
 <script src="./js/data.js"></script>
 <script src="./js/calculations.js"></script>
-<script src="./js/client-handler.js"></script>
-<script src="./js/main.js"></script> 
+<script src="./js/main.js"></script>
+<script src="./js/client-handler.js"></script> 
 
 </body>
 </html>
