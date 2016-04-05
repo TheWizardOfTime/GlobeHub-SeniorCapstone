@@ -35,9 +35,11 @@ $("#toggle-profile").click( function() {
 
 $(function() {
     $("#addto-pocket-button").click(function() {
+        $("#addto-pocket-form").
         $("#addto-pocket-form").show(500);
     });
     $("#addto-button").click(function() {
+        event.preventDefault();
         $("#addto-pocket-form").hide(500);
     });
 });
@@ -51,26 +53,69 @@ $(function() {
     $("#create-button").click( function(event) {
         event.preventDefault();
         var name = $("#create-pocket-form").find('input[name="pocket-name"]').val();
-        socket.emit('make-pocket', {'pname':name})
+        socket.emit('create-pocket', {'pname':name})
         $("#create-pocket-form").hide(500);
     });
 });
 
+$(function() {
+    $("#remove-pocket-button").click( function() {
+
+    });
+})
+
+$(function() {
+    $('#pocket-list').find('li:has(ul)')
+    .click( function(event) {
+        if (this == event.target) {
+            $(this).toggleClass('expanded');
+            $(this).children('ul').toggle('medium');
+        }
+        return false;
+    })
+    .addClass('collapsed')
+    .children('ul').hide();
+
+    //Create the button funtionality
+    $('#expand-list')
+    .unbind('click')
+    .click( function() {
+        $('.collapsed').addClass('expanded');
+        $('.collapsed').children().show('medium');
+    })
+
+    $('#collapse-list')
+    .unbind('click')
+    .click( function() {
+        $('.collapsed').removeClass('expanded');
+        $('.collapsed').children().hide('medium');
+    })
+});
+
+// /////////////////////////////////////// //
+//  Server Responses for Clients Requests  //
+// /////////////////////////////////////// //
+
+socket.on('init-pocket', function( data ) {
+
+    console.log(data.pockets);
+    pagebuilder.displayPocketLists( data.pockets , function( html ) {
+
+    });
+});
+
+socket.on('news-response', function ( data ) {
+  pagebuilder.displayNewsList( data.info.name, data.info.news, function( html ) {
+    if( $('#feed-container').has('.news-feed') ) { 
+        $('#current-country').remove( )
+        $('.news-feed').remove( );
+    }
+    $('#feed-container').append( html );
+   });
+
+  pagebuilder.displayProfile( data.info.profiles, function( html ) {
+  });
+});
 
 
-// ///////////////////////////////////////////////////// //
-//  Server Responses for the specific Clients Requests   //
-// ///////////////////////////////////////////////////// //
-
-// $(function() {
-//     $("#remove-pocket-button").click(function() {
-//         $("#addto-pocket-form #valueFromMyButton").text($(this).val().trim());
-//         $("#addto-pocket-form input[type=text]").val('');
-//         $("#valueFromMyModal").val('');
-//         $("#addto-pocket-form").show(500);
-//     });
-//     $("#addto-button").click(function() {
-//         $(".save-button").val($("#pocket-form input[type=text]").val().trim());
-//         $("#pocket-form").hide(400);
-//     });
-// });
+/*---- End of File ----*/

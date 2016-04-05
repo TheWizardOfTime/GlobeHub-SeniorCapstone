@@ -1,17 +1,17 @@
 
 /* ==========================================================================
-   Main Color Schemes and fonts for website
+   Main Color Schemes and Fonts for Website
    ========================================================================== */
 
 /* Main blue hex: 7efaff */
 /* Orange hex: ff8340 */
 
-@font-face { font-family: 'Industria'; src: url('./fonts/ufonts.com_industria-solid.ttf');}
+/*@font-face { font-family: 'Industria'; src: url('./fonts/ufonts.com_industria-solid.ttf');}*/
 @font-face { font-family: 'EurostileLTStd-Ex2'; src: url('./fonts/eurostileltstd-ex2.ttf');}
 @font-face { font-family: 'Borda'; src: url('./fonts/Borda.ttf'); }
-@font-face { font-family: 'Borda-Light'; src: url('./fonts/Borda Light.ttf')}
+/*@font-face { font-family: 'Borda-Light'; src: url('./fonts/Borda Light.ttf')}
 @font-face { font-family: 'Borda-Bold'; src: url('./fonts/Borda Bold.ttf')}
-@font-face { font-family: 'Borda-Medium'; src: url('./fonts/Borda Medium.ttf')}
+@font-face { font-family: 'Borda-Medium'; src: url('./fonts/Borda Medium.ttf')}*/
 
 
 /* ==========================================================================
@@ -217,9 +217,46 @@ a { outline: 0;}
     padding:10px 20px;
 }
 
-/*---------------- 
+/*-----------------------------
+    Pocket List Interactivity 
+-------------------------------*/
+
+#pocket-list ul, li {
+    list-style: none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+
+/*#pocket-list .collapsed {
+    background-image: url(../img/collapsed.png);
+}
+
+#pocket-list .expanded {
+    background-image: url(../img/expanded.png);
+}*/
+
+#pocket-list {
+    clear: both;
+}
+
+.list-controller{
+  margin-bottom: 15px;
+}
+
+.list-controller a {
+    border: 1px solid #555555;
+    color: #555555;
+    cursor: pointer;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-right: 5px;
+    padding: 4px 10px;
+}
+
+/*--------------- 
     Containers 
-------------------*/
+-----------------*/
 
 .large-container { 
     position:relative; 
@@ -235,7 +272,7 @@ a { outline: 0;}
     margin:5px;
 } 
 
-/*-----------------
+/*----------------
     Main Header
 ------------------*/
 
@@ -315,9 +352,9 @@ a { outline: 0;}
     width: 100%; 
 }
 
-/*------------------------------
-    Buttons and Form Layouts
---------------------------------*/
+/*----------------------------
+    Button and Form Layouts
+------------------------------*/
 
 .button-container {
     width:33%;
@@ -387,9 +424,9 @@ a { outline: 0;}
     transform: translate(-50%, -50%);
 }
 
-/*----------------------
+/*---------------------
     Forms and Inputs
-------------------------*/
+-----------------------*/
 
 .form-pocket {
     position: relative;
@@ -432,9 +469,9 @@ a { outline: 0;}
 }
 
 
-/*---------------------
+/*------------
     Headers
------------------------*/
+--------------*/
 .head{
     margin:2px; 
     font-family:'EurostileLTStd-Ex2',sans-serif;
@@ -459,9 +496,9 @@ a { outline: 0;}
 }
 
 
-/*-------------------
+/*------------------
     Error Message
----------------------*/
+--------------------*/
 
 .module-error{
     position:relative;
@@ -479,9 +516,9 @@ a { outline: 0;}
     height: 200px;
 }
 
-/*-----------------------
+/*----------------------
     Overall Container
--------------------------*/
+------------------------*/
 
 #main-container{
     bottom:0;
@@ -490,104 +527,108 @@ a { outline: 0;}
     right:0;
     margin:0;
 }
-/*---------------------------------
-    Main Container For News CSS
------------------------------------*/
-#news-main-container {
+
+/*----------------------------
+    Main Newsfeed Container
+------------------------------*/
+
+#feed-container{
+    font-family:'EurostileLTStd-Ex2',sans-serif; 
     position:absolute;
-    border:2px;
-    border-radius:15px; 
-    width: 33%; 
-    height: 95%;
-    top:150px;
-    bottom:100px;
+    z-index: 500;
+    top:8.5%; 
+    width: 33%;
+    height: 64%;
+    left: 0px;
+    overflow: scroll;
+    border-bottom: 2px solid rgba(126,250,255,.4);
+    background-color: rgba( 0 , 0 , 0 , 0.4);
+    border: 2px solid rgba(126,250,255,.4);
+    border-radius:15px;  
+    box-shadow: 0px 0px 100px rgba(126,250,255,.6); 
 }
-    #news-container {
-        position:absolute;
-        display:flex;
-        flex-direction:column;
-        width: 100%; 
-        height: 100%;
-        text-decoration:none;
-        opacity: 1.0; 
-        z-index: 500;
-/*        transform: translateX(-95%);
-        -webkit-transform: translateX(-95%);*/
-    }
 
-    /*--------------------------------
-        News Information and Stuff
-    ----------------------------------*/
+/*-- News element classes--*/
 
-            .time{color:#ff8340 ;}
-            .article{color:#7efaff; text-decoration-line: none;}
-            .publisher{color:#ff8340 ;}
-            .source{color:#7efaff ;}
-            .origin{color:#7efaff ;}
+.time{
+    color:#ff8340;
+}
+.article{
+    color:#7efaff; 
+    text-decoration-line: none;
+}
+.publisher{
+    color:#ff8340;
+}
+.source{
+    color:#7efaff;
+}
+.origin{
+    color:#7efaff;
+}
 
-    /*--------------------------------*/
+/*------------------------------
+    Main Watch List Container
+--------------------------------*/
 
-        #show-news{
-            position: absolute;
-            right: 10px;
-            top: 5px;
-        }
-        #feed-container{
-            font-family:'EurostileLTStd-Ex2',sans-serif; 
-            position:absolute;
-            z-index: 500;
-            top:7.8%; 
-            width: 33%;
-            height: 65%;
-            left: 0px;
-            overflow: scroll;
-            border-bottom: 2px solid rgba(126,250,255,.4);
-            background-color: rgba( 0 , 0 , 0 , 0.4);
-            border: 2px solid rgba(126,250,255,.4);
-            border-radius:15px;  
-            box-shadow: 0px 0px 100px rgba(126,250,255,.6); 
-        }
-        #watch-container{
-            font-family:'EurostileLTStd-Ex2',sans-serif; 
-            position:absolute;
-            z-index: 500;
-            top:73.1%;
-            width: 33%; 
-            height: 30%;
-            left: 0px;
-            overflow: scroll;
-            border-bottom: 2px solid rgba(126,250,255,.4);
-            background-color: rgba( 0 , 0 , 0 , 0.4);
-            border: 2px solid rgba(126,250,255,.4);
-            border-radius:15px;  
-            box-shadow: 0px 0px 100px rgba(126,250,255,.6);  
-        }
-
-/*----------------------------------------
-    Main container for Information CSS
-------------------------------------------*/
-#pocket-main-container {
+#watch-container {
+    font-family:'EurostileLTStd-Ex2',sans-serif; 
     position:absolute;
-    right:0;
+    z-index: 500;
+    top:73.1%;
+    width: 33%; 
+    height: 30%;
+    left: 0px;
+    overflow: scroll;
+    border-bottom: 2px solid rgba(126,250,255,.4);
+    background-color: rgba( 0 , 0 , 0 , 0.4);
+    border: 2px solid rgba(126,250,255,.4);
+    border-radius:15px;  
+    box-shadow: 0px 0px 100px rgba(126,250,255,.6);  
+}
+
+/*--------------------------
+    Main Pocket Container
+----------------------------*/
+
+#pocket-container {
+    position: fixed;
     top: 60%;
     width: 33%; 
-    height: 100%;  
+    height: 100%; 
+    opacity: 1.0; 
+    z-index: 500;
+    right:0px; 
+    border: 2px solid rgba(126,250,255,.4);
+    border-radius:15px;   
+    background-color: rgba( 0 , 0 , 0 , 0.4); 
+    box-shadow: 0px 0px 70px rgba(126,250,255,.6);
+    margin:2px;
 }
-    #pocket-container {
-        position: fixed;
-        top: 60%;
-        width: 33%; 
-        height: 100%; 
-        opacity: 1.0; 
-        z-index: 500;
-        right:0px; 
-        border: 2px solid rgba(126,250,255,.4);
-        border-radius:15px;   
-        background-color: rgba( 0 , 0 , 0 , 0.4); 
-        box-shadow: 0px 0px 70px rgba(126,250,255,.6);
-        margin:2px;
-    }
 
-/* webgl */
+/*---------------------------
+    Main Profile Container
+-----------------------------*/
+#profile-container {
+    position: fixed;
+    top: 8.5%;
+    width: 33%; 
+    height: 30%; 
+    opacity: 1.0; 
+    z-index: 500;
+    right:0px; 
+    border-bottom: 2px solid rgba(126,250,255,.4);
+    background-color: rgba( 0 , 0 , 0 , 0.4);
+    border: 2px solid rgba(126,250,255,.4);
+    border-radius:15px;  
+    box-shadow: 0px 0px 100px rgba(126,250,255,.6);
+}
+
+/*---------------------------------------
+    A little bit of stuff for the WebGL 
+-----------------------------------------*/
 #webgl{ z-index:10; display:block; width:100%; height:100%; background-color: #000; transition:all 2s;}
 #webgl.show { opacity:1;}
+
+
+/*---- End of File ----*/

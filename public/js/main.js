@@ -34,7 +34,7 @@ var webglEl = document.getElementById('webgl');
 
 // document.body.appendChild( stats.domElement );
 
-socket.emit( 'initialize' );
+socket.emit( 'initialize-application' );
 
 function start( ) {
   if ( !Detector.webgl ) {
@@ -55,7 +55,7 @@ function start( ) {
           console.log(applicationData.lookupData)
 
           initScene( );
-          // animate( );
+          animate( );
 
         });
       });
@@ -82,42 +82,42 @@ function initScene( ) {
   // dirLight.color.setHSL( 0.1, 0.7, 0.5 );
   // scene.add( dirLight );
 
-  var light = new THREE.PointLight( 0xffffff , 1.5 );
-  light.position.set( 8 , 5 , 8);
-  scene.add( light );
+  // var light = new THREE.PointLight( 0xffffff , 1.5 );
+  // light.position.set( 8 , 5 , 8);
+  // scene.add( light );
 
-  sunFlare = models.sunFlare;
+  // sunFlare = models.sunFlare;
 
-  sunFlare.position.copy( light.position );
+  // sunFlare.position.copy( light.position );
 
-  scene.add(sunFlare);
+  // scene.add(sunFlare);
 
-  pivot = new THREE.Object3D();
-  moon = models.moon.surface;
+  // pivot = new THREE.Object3D();
+  // moon = models.moon.surface;
   earth = models.earth.surface;
 
   scene.add(earth)
-  earth.add(pivot)
-  pivot.add(moon)
+  // earth.add(pivot)
+  // pivot.add(moon)
   
-  clouds = models.earth.clouds;
+  // clouds = models.earth.clouds;
   // culture = models.earth.culture;
-  galaxy = models.universe;
+  // galaxy = models.universe;
   // marker = models.marker;
   
   // scene.add(culture)
-  scene.add(clouds)
-  scene.add(galaxy)
+  // scene.add(clouds)
+  // scene.add(galaxy)
   // scene.add(marker)
 
   controls = new THREE.OrbitControls( camera );
 
-  // webglEl.appendChild(renderer.domElement);
+  webglEl.appendChild(renderer.domElement);
   // // document.body.appendChild( stats.domElement );
 
-  // webglEl.addEventListener( 'click' , onLeftClick , false );
-  // webglEl.addEventListener( 'dblclick' , onLeftDoubleClick , false );
-  // webglEl.addEventListener( 'mousemove' , onMouseMove, false );
+  webglEl.addEventListener( 'click' , onLeftClick , false );
+  webglEl.addEventListener( 'dblclick' , onLeftDoubleClick , false );
+  webglEl.addEventListener( 'mousemove' , onMouseMove, false );
 
   // mapCanvas = document.createElement('canvas');
   // mapCanvas.width = 4096;
@@ -130,8 +130,6 @@ function initScene( ) {
   //       mapContext.drawImage(imageObj, 0, 0);
   // };
   //   imageObj.src = './textures/index_shifted_grey.png';
-
-  // animate();
 
   $(document).ready(function() {
     $('body').addClass('loaded');
@@ -149,9 +147,9 @@ function render() {
   // earth.rotation.y += 0.0005;
   // earth.position
   // culture.rotation.y+= 0.0005;
-  clouds.rotation.y -= 0.0003;
+  // clouds.rotation.y -= 0.0003;
   // moon.rotation.y +=0.0005;
-  pivot.rotation.y += 0.0005;
+  // pivot.rotation.y += 0.0005;
   controls.update( );
   if (camera.position.length() < 2) camera.position.setLength(2);
   if (camera.position.length() > 10) camera.position.setLength(10);
@@ -206,7 +204,7 @@ function onLeftClick( e ) {
       var y = intersections[ 0 ].point.y;
       var z = intersections[ 0 ].point.z;
 
-      findPoint( applicationData.coordinateData.countries , coords, function( info ) {
+      findPoint( applicationData.coordinateData.countries , LatLngFromPoint(x,y,z,rad), function( info ) {
          $('#selected-country').text(" "+info.name);
       });
     }
@@ -236,10 +234,10 @@ function onLeftDoubleClick( e ) {
         var y = intersections[ 0 ].point.y;
         var z = intersections[ 0 ].point.z;
 
-        findPoint( applicationData.coordinateData.countries , LatLngFromPoint(x,y,z,rad) , function ( info ) {
+        findPoint( applicationData.coordinateData.countries , LatLngFromPoint(x,y,z,rad) , function ( newsParams ) {
 
-            $('#selected-country').text(" "+info.name);
-            socket.emit( 'send-info' , { 'info' : info } );
+            $('#selected-country').text(" "+newsParams.name);
+            socket.emit( 'request-news' , { 'info' : newsParams } );
 
         });
     }
@@ -285,13 +283,12 @@ function onMouseMove( e ) {
   }
 }
 
-// ////////////////////////////////////////////////////// //
-//   Our Sockets to Interact with our Application Server  //
-// ////////////////////////////////////////////////////// //
+// ////////////////////////////////////////////////// //
+//  Our Sockets to for Initializing the Application   //
+// ////////////////////////////////////////////////// //
 
-socket.on('validation', function ( data ) {
+socket.on('confirm-production', function ( data ) {
 
-  console.log('message received!');
   if( data.response ) { start () }
 
   else {
@@ -307,24 +304,17 @@ socket.on('validation', function ( data ) {
 
 });
 
+socket.on('init-pocket', function( data ) {
+
+    console.log(data.pockets);
+    pagebuilder.displayPocketLists( data.pockets , function( html ) {
+
+    });
+});
+
 socket.on('user_message', function ( data ) {
   console.log( data.message );
 });
 
-socket.on( 'receive-info' , function ( data ) {
 
-  pagebuilder.displayNewsList( data.info.name, data.info.news, function( html ) {
-
-    if( $('#feed-container').has('.news-feed') ) { 
-        $('#current-country').remove( )
-        $('.news-feed').remove( );
-    }
-
-    $('#feed-container').append( html );
-
-   });
-  
-  pagebuilder.displayProfile( data.info.profiles, function( html ) {
-
-  });
-});
+/*---- End of File ----*/

@@ -14,12 +14,12 @@
     </div>
 	<div id="main-container" class="large-container" style="overflow:hidden">
 <!--        <div id="instructions" style="z-index: 0; opacity: 0;">
-			<div id ="insturctions_text" style="opacity: 0.8; padding-top: 0px;"></div>
+			<div id="insturctions_text" style="opacity: 0.8; padding-top: 0px;"></div>
 			<div id="instructions_1" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
 			<div id="instructions_2" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
 			<div id="instructions_3" class="instructions_thumb" style="top: 45%; opacity: 0.8"></div>
 		</div> -->
-		<!-- <section id="webgl"></section> -->
+		<section id="webgl"></section>
 		<div id="main-header" class="standard-header">
 			<div class="titles show">
 				<div class="title">GlobeHub</div>
@@ -38,7 +38,7 @@
 				<div id="user-buttons" class="button-layout">
 					<button id="toggle-news" class="action-button slide">NEWS</button>
 					<button id="toggle-watch" class="action-button slide">WATCH</button>
-					<button id="toogle-info" class="action-button slide">PROFILE</button>
+					<button id="toggle-profile" class="action-button slide">PROFILE</button>
 					<button id="toggle-pocket" class="action-button slide">POCKET</button>
 				</div>
 			</div>
@@ -88,13 +88,19 @@
 					<h1 class="label">pocket:</h1>
 					<input type="button" id="create-pocket-button" class="action-button" value="Create">
 					<input type="button" id="remove-pocket-button" class="action-button" value="Remove">
-					<ul id="pockets">
-					</ul>
+				</div>
+<!-- 				<div id="pocket-list-control" class="list-controller">
+					<input type="button" id="expand-list" class="action-button" value="+">
+					<input type="button" id="collapse-list" class="action-button" value="-">
+				</div> -->
+			</div>
+			<div id="profile-container" style="overflow-y:scroll;">
+				<div class="sub-header">
+					<h1 class="label">country profile:</h1>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 <!-- ============= Shaders for LookUp Map and Stuff ==============  -->
 

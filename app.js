@@ -4,9 +4,6 @@
 //  Globehub Server Code - Running on the Express Framework  //
 // ///////////////////////////////////////////////////////// //
 
-
-
-
 /** NOTE:
  * Most of these module dependencies are included when using the Express-Generator 
  * module, and are incldued for the convenience of those using Express as a server/router
@@ -15,8 +12,6 @@
  * sake I decided to use Express to remove the need to fully deal with CORS and HTTP protocols,
  * as they added a level of complexity to my project that I did not fully understand at the time.
  */
-
-
 
 /** Require Modules for Server-Side Functionality **/
 
@@ -172,31 +167,41 @@ app.io.on( 'connection', function(socket) {
    *  If any of the Web-Scrapers do not work, then our site will not render the main UI.
    */
 
-  socket.on('initialize' , function( data ) {
+  socket.on('initialize-application' , function( data ) {
     console.log('Validating...');
     test.validate( function ( response ) {
       console.log('Finished!');
       if( !response ) {
-        socket.emit('validation' , { 'msg': ' Globehub is currently undergoing maintainance, in the mean time use google ' , 'response': response } )
+        socket.emit('confirm-production' , { 'response': response } )
       } else {
-        // console.log( response );
-        socket.emit('validation' , { 'msg': ' Loading...' , 'response': response } )
+        socket.emit('confirm-production' , { 'response': response } )
 
         db.model('User').findById( session_user , function( error , user_doc ) {
-
-          console.log(user_doc);
-
           if (!error) {
-            // if( doc.find({pocket: {$not: { $size: 0}}}) ){}
 
             /** Mongoose populate calls are used to deliver content to our Client.
              *  A document can only be populated if there is a reference ObjectID associated
              *  In our Database, otherwise the populate call will return 'undefined'.
              */
-            user_doc.populate('pocket', function (err, doc ) { 
-              console.log(doc);
-            })
+
+            if( user_doc._doc.pocket.length > 0 ) {
+              user_doc.populate('pocket', function ( err, doc ) { 
+                var pockets = doc._doc.pocket;
+                  console.log(pockets);
+                  socket.emit('initialize-pocket', { 'pockets': pockets } );
+              });
+            } else{ socket.emit('initialize-pocket', { 'pockets': false } ) }
+
+            if( user_doc._doc.watchlist.length > 0 ) {
+              user_doc.populate('watchlist', function( err, doc ) {
+                var watchlist = doc._doc.watchlist;
+                console.log(watchlist);
+                socket.emit('initialize-watchlist', {'watchlist': watchlist } );
+              });
+            } else{ socket.emit('initialize-watchlist', {'watchlist': false } ) };
           };
+
+
         });
       }
     });  
@@ -227,11 +232,11 @@ app.io.on( 'connection', function(socket) {
   //  Calls to Web-Scrapper on User Request  //
   // /////////////////////////////////////// //
 
-  socket.on( 'send-info' , function( data ) {
+  socket.on( 'request-news' , function( data ) {
     webscraper.getNewsNow( data.info.newsnow , function(news){
       webscraper.getProfileBBC( data.info.bbc , function(bbc){
         webscraper.getProfileIM( data.info.im , function(im){
-          socket.emit('receive-info',{'info':{'country':data.info.name,'news':news,'profiles':{'bbc':bbc,'im':im}}});
+          socket.emit('response-news',{'info':{'country':data.info.name,'news':news,'profiles':{'bbc':bbc,'im':im}}});
         });
       });
     });
@@ -241,7 +246,7 @@ app.io.on( 'connection', function(socket) {
   //  Database Implementation for our Application   //
   // ////////////////////////////////////////////// //
 
-  socket.on('make-pocket' , function( data ) {
+  socket.on('create-pocket' , function( data ) {
 
     db.model('User').findById( session_user , function ( error , user_doc ) {
 
@@ -263,14 +268,14 @@ app.io.on( 'connection', function(socket) {
             pocket.save(function (err) {
               if (!err){
                 console.log('saved!');
-                socket.emit('user_message',{'message':'Pocket Successfully created!'});
+                socket.emit('user_message',{'message':"Pocket Successfully created!"});
               }
             });
           }
         });
       } else {
           console.log('Uh oh there was and Error!' + error ); 
-          socket.emit('user_message', {'message':'There was an error, we are working on fixing it'}); 
+          socket.emit('user_message', {'message':"There was an error, but we're fixing it!"}); 
         }
     });
   });
@@ -287,3 +292,6 @@ app.io.on( 'connection', function(socket) {
     });
   });
 });
+
+
+/*---- End of File ----*/
