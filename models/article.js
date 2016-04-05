@@ -9,6 +9,7 @@ var articleSchema = new Schema(
 		origin: { type:String },
 		time: { type:String },
 		created: { type: Date, 'default': Date.now },
+		pocket: { type: Schema.Types.ObjectId, ref: 'Pocket'}
 	}, 
 		{ collection: 'articles'}
 );

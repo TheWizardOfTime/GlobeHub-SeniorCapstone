@@ -285,31 +285,30 @@ function onMouseMove( e ) {
   }
 }
 
-// ////////////////////////////////////////////// //
-//  Some Sockets to Interact with our app server  //
-// ////////////////////////////////////////////// //
+// ////////////////////////////////////////////////////// //
+//   Our Sockets to Interact with our Application Server  //
+// ////////////////////////////////////////////////////// //
 
 socket.on('validation', function ( data ) {
 
   console.log('message received!');
-  if( data.response ) { start ( ) }
+  if( data.response ) { start () }
 
   else {
 
-    var error = document.createElement( 'div' );
-    error.className = 'module-error';
+    var error_div = document.createElement( 'div' );
+    error_div.className = 'module-error';
 
-    error.innerHTML = 'Globehub is currently undergoing maintainance so <br /> in the mean time use <a href="http://google.com">google</a>to look find any news you want.<br /> Thank you for your patronage!';
-    var page = document.getElementById('container');
-    page.appendChild( error );
+    error_div.innerHTML = 'Regretably, Globehub is currently undergoing maintainance so <br /> in the mean time use <a href="http://google.com">google</a>to look find any news you want.<br /> Thank you for your patronage!';
+    var page = document.getElementById('main-container');
+    page.appendChild( error_div );
     
    }
+
 });
 
-socket.on('sent' , function ( data ) {
-
-  console.log( data.msg );
-
+socket.on('user_message', function ( data ) {
+  console.log( data.message );
 });
 
 socket.on( 'receive-info' , function ( data ) {

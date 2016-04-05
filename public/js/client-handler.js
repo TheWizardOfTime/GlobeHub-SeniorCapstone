@@ -2,23 +2,7 @@
 //  jQuery for animations and Stuff  //
 ///////////////////////////////////////
 
-// $(document).ready( function() {
-// 	if($('body').hasClass('loaded')){
-
-// 		$("#feed-container").animete({ width:'toggle'});
-// 		$("#watch-container").animate({ width:'toggle'});
-// 		$("#pocket-container").animate({width:'toggle'});
-
-// 		console.log("removed loader!");
-// 		setTimeout( function() {
-// 			$("#loader-wrapper").remove();
-// 		}, 1000);
-// 	}
-// });
-
 /** Sliding Animations **/
-
-var socket = io.connect();
 
 $("#toggle-news").click( function () {
 	console.log('click');
@@ -38,6 +22,17 @@ $("#toggle-pocket").click( function() {
 	$info.animate({width:'toggle'},1000);
 });
 
+$("#toggle-profile").click( function() {
+    console.log('click');
+    $profile = $("#profile-container");
+    $profile.animate({width:'toggle'},1000);
+
+});
+
+// //////////////////////////////////////////////////// //
+//  Client Request Events that Trigger Server Response  //
+// //////////////////////////////////////////////////// //
+
 $(function() {
     $("#addto-pocket-button").click(function() {
         $("#addto-pocket-form").show(500);
@@ -56,10 +51,16 @@ $(function() {
     $("#create-button").click( function(event) {
         event.preventDefault();
         var name = $("#create-pocket-form").find('input[name="pocket-name"]').val();
-        socket.emit('make-pocket', {'name':name})
+        socket.emit('make-pocket', {'pname':name})
         $("#create-pocket-form").hide(500);
     });
 });
+
+
+
+// ///////////////////////////////////////////////////// //
+//  Server Responses for the specific Clients Requests   //
+// ///////////////////////////////////////////////////// //
 
 // $(function() {
 //     $("#remove-pocket-button").click(function() {
@@ -72,21 +73,4 @@ $(function() {
 //         $(".save-button").val($("#pocket-form input[type=text]").val().trim());
 //         $("#pocket-form").hide(400);
 //     });
-// });
-
-
-// $("#create-pocket").click( function() {
-
-// });
-
-// $("#remove-pocket").click( function() {
-
-// });
-
-// $("#add-to-pocket").click( function() {
-
-// });
-
-// $("#remove-from-pocket").click( function () {
-
 // });
