@@ -14,13 +14,9 @@ var socket = io.connect();
 
 var options = {
     radius : 1.0,
-    segments : 64,
+    segments : 30,
     bump : 0.005
 };
-
-var radius   = 1.0,
-    segments = 64,
-    rotation = 6;
 
 var applicationData;
 
@@ -82,15 +78,15 @@ function initScene( ) {
   // dirLight.color.setHSL( 0.1, 0.7, 0.5 );
   // scene.add( dirLight );
 
-  // var light = new THREE.PointLight( 0xffffff , 1.5 );
-  // light.position.set( 8 , 5 , 8);
-  // scene.add( light );
+  var light = new THREE.PointLight( 0xffffff , 1.5 );
+  light.position.set( 8 , 5 , 8);
+  scene.add( light );
 
-  // sunFlare = models.sunFlare;
+  sunFlare = models.sunFlare;
 
-  // sunFlare.position.copy( light.position );
+  sunFlare.position.copy( light.position );
 
-  // scene.add(sunFlare);
+  scene.add(sunFlare);
 
   // pivot = new THREE.Object3D();
   // moon = models.moon.surface;
@@ -100,15 +96,13 @@ function initScene( ) {
   // earth.add(pivot)
   // pivot.add(moon)
   
-  // clouds = models.earth.clouds;
-  // culture = models.earth.culture;
-  // galaxy = models.universe;
-  // marker = models.marker;
+  clouds = models.earth.clouds;
+  culture = models.earth.culture;
+  galaxy = models.universe;
   
-  // scene.add(culture)
-  // scene.add(clouds)
-  // scene.add(galaxy)
-  // scene.add(marker)
+  scene.add(culture)
+  scene.add(clouds)
+  scene.add(galaxy)
 
   controls = new THREE.OrbitControls( camera );
 
@@ -142,38 +136,19 @@ function initScene( ) {
 }
 
 function render() {
-
-  renderer.clear();
-  // earth.rotation.y += 0.0005;
-  // earth.position
-  // culture.rotation.y+= 0.0005;
-  // clouds.rotation.y -= 0.0003;
-  // moon.rotation.y +=0.0005;
-  // pivot.rotation.y += 0.0005;
-  controls.update( );
-  if (camera.position.length() < 2) camera.position.setLength(2);
-  if (camera.position.length() > 10) camera.position.setLength(10);
-  // requestAnimationFrame( animate ); 
-  renderer.render( scene , camera );
-
+  renderer.clear();      
+  renderer.render( scene, camera );  
 }
 
 function animate( ) {
 
-  // // renderer.clear();
-  // // earth.rotation.y += 0.0005;
-  // // earth.position
-  // // culture.rotation.y+= 0.0005;
-  // clouds.rotation.y -= 0.0003;
-  // // moon.rotation.y +=0.0005;
-  // // pivot.rotation.y += 0.0005;
-  // controls.update( );
-  // if (camera.position.length() < 2) camera.position.setLength(2);
-  // if (camera.position.length() > 10) camera.position.setLength(10); 
+  clouds.rotation.y -= 0.0007;
+  if (camera.position.length() < 2) camera.position.setLength(2);
+  if (camera.position.length() > 10) camera.position.setLength(10);
+  controls.update( );
 
-  renderer.render( scene , camera );
-  requestAnimationFrame( animate );
   render();
+  requestAnimationFrame( animate );
 }
 
 function onLeftClick( e ) {
@@ -205,7 +180,7 @@ function onLeftClick( e ) {
       var z = intersections[ 0 ].point.z;
 
       findPoint( applicationData.coordinateData.countries , LatLngFromPoint(x,y,z,rad), function( info ) {
-         $('#selected-country').text(" "+info.name);
+         $('#selected-value').text(" "+info.name);
       });
     }
   }
@@ -236,9 +211,8 @@ function onLeftDoubleClick( e ) {
 
         findPoint( applicationData.coordinateData.countries , LatLngFromPoint(x,y,z,rad) , function ( newsParams ) {
 
-            $('#selected-country').text(" "+newsParams.name);
+            $('#selected-value').text(" "+newsParams.name);
             socket.emit( 'request-news' , { 'info' : newsParams } );
-
         });
     }
   }
@@ -272,20 +246,20 @@ function onMouseMove( e ) {
         var lat = coords.lat;
         var lng = coords.lng;
 
-        $('#current-country').text(" "+info.name);
-        $('#current-coordinates').text(" "+lat.toFixed(5) +", "+lng.toFixed(5));
+        $('#location-value').text(" "+info.name);
+        $('#coordinate-value').text(" "+lat.toFixed(5) +", "+lng.toFixed(5));
       });
     } else {
-        $('#current-country').text("");
-        $('#current-coordinates').text("");
+        $('#location-value').text("");
+        $('#coordinate-value').text("");
 
     }
   }
 }
 
-// ////////////////////////////////////////////////// //
-//  Our Sockets to for Initializing the Application   //
-// ////////////////////////////////////////////////// //
+// /////////////////////////////////////////////// //
+//  Our Sockets for Initializing the Application   //
+// /////////////////////////////////////////////// //
 
 socket.on('confirm-production', function ( data ) {
 

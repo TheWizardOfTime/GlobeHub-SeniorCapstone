@@ -173,6 +173,6 @@ var webscraper = ( function( ) {
             });
         }
     }
-} ( ) );
+}());
 
 module.exports = webscraper;

@@ -3,8 +3,8 @@
    Main Color Schemes and Fonts for Website
    ========================================================================== */
 
-/* Main blue hex: 7efaff */
-/* Orange hex: ff8340 */
+/* Main blue hex: #7efaff */
+/* Orange hex: #ff8340 */
 
 /*@font-face { font-family: 'Industria'; src: url('./fonts/ufonts.com_industria-solid.ttf');}*/
 @font-face { font-family: 'EurostileLTStd-Ex2'; src: url('./fonts/eurostileltstd-ex2.ttf');}
@@ -291,8 +291,16 @@ a { outline: 0;}
     transform: translate(-50%, 0);
 }
 
-#location-value, #coordinate-value, #current-country{
+#coordinate-value,#selected-value,#current-location{
     color: #ff8340;
+    font-family:'EurostileLTStd-Ex2',sans-serif;
+    text-transform:uppercase;
+}
+
+#selected-country,#current-coordinates,#location-value{
+    color: #7efaff;
+    font-family:'EurostileLTStd-Ex2',sans-serif;
+    text-transform:uppercase;
 }
 
 #date{

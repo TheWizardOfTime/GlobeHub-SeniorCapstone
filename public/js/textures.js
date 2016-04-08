@@ -5,6 +5,7 @@ var fileArray = [   {name :'earthSurface' , url : 'earth_no_ice_clouds.jpg', mes
                     {name :'earthCloud', url : 'earth_clouds.png', message : 'textureing clouds'},
                     {name :'earthOutline', url: 'earth_out_line.png', message: 'textureing outline'},
                     {name :'earthGreyIndex', url: 'index_shifted_grey.png', message: 'textureing greyscale index'},
+                    {name :'earthCultural', url: 'earth_cultural_black.png', message: 'textureing cultural map'},
                     {name :'moonSurface', url : 'moon.jpg', message :'textureing lunar surface'},
                     {name :'moonBump', url : 'moon_bump.jpg', message : 'textureing lunar contour'},
                     {name :'skyDome', url : 'galaxy_3.png', message : 'textureing sky box'},

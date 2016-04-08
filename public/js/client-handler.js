@@ -62,7 +62,7 @@ $(function() {
     $("#remove-pocket-button").click( function() {
 
     });
-})
+});
 
 $(function() {
     $('#pocket-list').find('li:has(ul)')
@@ -104,7 +104,7 @@ socket.on('init-pocket', function( data ) {
     });
 });
 
-socket.on('news-response', function ( data ) {
+socket.on('response-news', function ( data ) {
   pagebuilder.displayNewsList( data.info.name, data.info.news, function( html ) {
     if( $('#feed-container').has('.news-feed') ) { 
         $('#current-country').remove( )

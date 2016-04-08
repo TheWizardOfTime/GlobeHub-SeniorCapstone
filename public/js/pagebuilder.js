@@ -3,6 +3,7 @@
  */
 
 var news_id = 0;
+var profiles_id =0;
 
 var pagebuilder = {
         displayNewsList: function (name, news, callback) {
@@ -43,7 +44,7 @@ var pagebuilder = {
                 main_div.append(element_div);
                 main_div.append('<br>');
 
-                id++;
+                news_id++;
             }
             if(callback && typeof(callback) === "function") {
                 console.log('finished!');

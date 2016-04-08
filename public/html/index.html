@@ -23,16 +23,16 @@
 		<div id="main-header" class="standard-header">
 			<div class="titles show">
 				<div class="title">GlobeHub</div>
-					<div class="sub-title">
-						<span id="interactive">Interactive</span>
-						<span id="world">World</span>
-						<span id="news">News</span>
+				<div class="sub-title">
+					<span id="interactive">Interactive</span>
+					<span id="world">World</span>
+					<span id="news">News</span>
 				</div>
 			</div>
 			<div id="location-container">
-				<div id="selected-country"><h1 class="label">selected:<span id="selected-value"></span></h1></div>
-				<div id="current-country"><h1 class="label">location:<span id="location-value"></span></h1></div>
-				<div id="current-coordinates"><h1 class="label">Lat,Lng:<span id="coordinate-value"></span></h1></div> 
+				<div id="selected-country">selected:<span id="selected-value"></span></div><br>
+				<div id="current-location">location:<span id="location-value"></span></div><br>
+				<div id="current-coordinates">Lat,Lng:<span id="coordinate-value"></span></div> 
 			</div>
 			<div id="button-grid" class="button-container">
 				<div id="user-buttons" class="button-layout">
@@ -80,8 +80,11 @@
 					<h1 id="watch-header" class="head">watch:</h1>
 					<input type="button" id="watch-selected-button" value="Watch Selected" class="action-button">
 				</div>
-				<ul id="watches">
-				</ul>
+<!-- 				<ul id="watches"><br>
+				<li>United States of America</li><br>
+				<li>Italy</li><br>
+				<li>Japan</li><br>
+				</ul> -->
 			</div>
 			<div id="pocket-container" style="overflow-y:scroll;">
 				<div class="sub-header">
@@ -89,10 +92,28 @@
 					<input type="button" id="create-pocket-button" class="action-button" value="Create">
 					<input type="button" id="remove-pocket-button" class="action-button" value="Remove">
 				</div>
-<!-- 				<div id="pocket-list-control" class="list-controller">
+ 				<div id="pocket-list-control" class="list-controller">
 					<input type="button" id="expand-list" class="action-button" value="+">
 					<input type="button" id="collapse-list" class="action-button" value="-">
-				</div> -->
+				</div>
+				<!--<ul id="pocket-list">
+                 	<li class="pocket-title">
+                	Articles In The UnitedStates
+                		<ul>
+                			<li>
+                			<div class="news-element"><span><a class="article" href="http://www.newsnow.co.uk//c.newsnow.co.uk/A/824512600?-15254:724:3" target="_blank" rel="nofollow">If Cruz Keeps This Pace, Trump Won’t Get a Majority of Delegates</a><br><span class="source">PUB: The New York Times, US</span><br><span class="time">TIME 14:29 6-Apr-16</span></span></div>
+                			</li>
+                			<div class="news-element"><span><a class="article" href="http://www.newsnow.co.uk//c.newsnow.co.uk/A/824490785?-15254:724:3" target="_blank" rel="nofollow">The Heron’s Nest: The Wright Stuff: They shut down I-95?</a><br><span class="source">PUB: The Delaware County Daily Times, US</span><br><span class="time">TIME 12:18 6-Apr-16</span></span></div>
+                			<li>
+                			<div class="news-element"><span><a class="article" href="http://www.newsnow.co.uk//c.newsnow.co.uk/A/824604427?-15254:724:3" target="_blank" rel="nofollow">Racism in America Today Is Alive and Well — And These Stats Prove It</a><br><span class="source">PUB: Mic, US</span><br><span class="time">TIME 00:54</span></span></div>
+                			</li>
+                		<ul>
+                	</li>
+                	<li class="pocket-title">
+                	Just an Empty Pocket
+                	</li>
+                </ul>
+ -->
 			</div>
 			<div id="profile-container" style="overflow-y:scroll;">
 				<div class="sub-header">

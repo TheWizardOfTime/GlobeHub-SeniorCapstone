@@ -76,13 +76,12 @@ function makeEarthCulturalSphere( r , s , callback ) {
     
     var culturalMaterial = new THREE.MeshBasicMaterial( {
 
-        map : textureMap['earthCultureTex'],
+        map : textureMap['earthCultural'],
         transparent : true
         
     } );
 
     if( callback && typeof( callback ) === "function" && ( culturalGeo !== 'undefined' && culturalMaterial !== 'undefined' ) ) {
-        // console.log('culture!')
         callback(new THREE.Mesh( culturalGeo , culturalMaterial ) );
     }
 }
@@ -98,26 +97,14 @@ function makeEarthCloudSphere( r , s , callback ) {
         
     });
 
-    // var cloudMaterial = new THREE.ShaderMaterial( {
-    //     {
-    //         uniforms:
-    //         {
-    //             image:textureMap['earthCloud'];
-    //         },
-    //         vertexShader: document.getElementById('cloudVertexShader').textContent,
-    //         fragmentShader: document.getElementById('cloudFragmentShader').textContent
-    //     }
-    // })
-
     if(callback && typeof(callback) === "function" && ( cloudGeo !== 'undefined' && cloudMaterial !== 'undefined' ) ) {
-        // console.log('clouds!')
         callback(new THREE.Mesh( cloudGeo , cloudMaterial ) );
     }
 }
 
-function makeMoonSurface ( r , s , b , callback ) {
+function makeMoonSurface ( r , b, callback ) {
 
-    var moonGeo = new THREE.SphereGeometry( r , s , s);
+    var moonGeo = new THREE.SphereGeometry( r , 12 , 12);
     
     var moonMaterial = new THREE.MeshPhongMaterial({
         
@@ -125,10 +112,9 @@ function makeMoonSurface ( r , s , b , callback ) {
         bumpMap : textureMap['moonBump'],
         bumpScale : b
 
-    } );
+    });
 
     if( callback && typeof( callback ) === "function" && ( moonGeo !== 'undefined' && moonMaterial !== 'undefined') ) {
-        // console.log('moon-surface!')
         callback( new THREE.Mesh( moonGeo, moonMaterial ) )
     }
 }
@@ -143,7 +129,6 @@ function makeEarthHalo ( mesh ) {
         outsideUniforms.power.value = 1.5;
 
     mesh.add( glowMesh.object3d );
-    // console.log('earth-atmosphere!')
     return mesh;
     
 }
@@ -158,7 +143,6 @@ function makeMoonHalo ( mesh ) {
         outsideUniforms.power.value = 5.0;
 
     mesh.add(glowMesh.object3d);
-    // console.log('moon-atmosphere!')
     return mesh;
 
 }
@@ -175,22 +159,10 @@ function createSkyDome ( callback ) {
     } );
 
     if( callback && typeof( callback ) === "function") { 
-        // console.log ( 'universe' ) 
         callback( new THREE.Mesh( domeGeo , domeMaterial ) );
     }   
 }
 
-// function createMarker ( callback ) {
-    
-//     var markerGeo = new THREE.SphereGeometry( 1 , 20 , 20 );
-//     var markerMaterial = new THREE.MeshBasicMaterial( { color : 0x00FF00 } );
-
-//     if( callback && typeof( callback ) === "function") {
-     
-//         console.log( 'marker-complete!' )
-//         callback( new THREE.Mesh( markerGeo , markerMaterial ) )
-//     }
-// }
 
 function createEarth( r , s , b , callback ) {
 
@@ -203,32 +175,18 @@ function createEarth( r , s , b , callback ) {
 
         } );
 
-        makeEarthCulturalSphere( r + 0.002 , s , function ( earthCulture ) {
+        makeEarthCulturalSphere( r + 0.003 , s+4 , function ( earthCulture ) {
 
             earthObject.culture = earthCulture;
 
         } );
 
-        makeEarthCloudSphere( r + 0.004 , s , function ( earthClouds ) {
+        makeEarthCloudSphere( r + 0.009 , s+4 , function ( earthClouds ) {
 
             earthObject.clouds =  earthClouds;
-            // console.log( Object.size( earthObject ) )
 
         } );
-
-        // makeEarthLookup( r , s , function ( earthLookup , uniforms ) {
-
-        //     // console.log(earthLookup)
-        //     // console.log(uniforms)
-
-        //     earthObject.lookup = earthLookup;
-        //     earthObject.uniforms = uniforms;
-
-        //     // console.log( Object.size( earthObject ) )
-
-        // } )
         
-
     if( callback && typeof( callback ) === "function" && Object.size( earthObject ) == 4 ) {
 
         console.log( 'earth-complete!' )
@@ -236,11 +194,11 @@ function createEarth( r , s , b , callback ) {
     }
 }
 
-function createMoon( r , s , b , callback ) {
+function createMoon( r , b , callback ) {
     
     var moonObject = { };
 
-        makeMoonSurface( r * 0.135 , s , b , function ( moonSurface ) {
+        makeMoonSurface( r * 0.135 , b , function ( moonSurface ) {
 
             moonSurface.position.set( 5 , 0 , 0 ); 
 
@@ -284,10 +242,10 @@ function createSun( callback ) {
 function modelsCheck ( modelsObject , callback ) {
 
 
-    if( callback && typeof( callback ) === "function" && Object.size(modelsObject) === 4 ) {
+    if( callback && typeof( callback ) === "function" && Object.size(modelsObject) === 3 ) {
 
         callback( modelsObject , true )
-    } 
+    }    
 } 
 
 Object.size = function( obj ) {
@@ -311,8 +269,8 @@ function loadModels( o , tm , callback ) {
     var bump = o.bump;
 
     createEarth( radius , segments , bump , function ( earth ) {
-        createMoon( radius , segments , bump , function ( moon ) {
-            mod.moon = moon;
+        // createMoon( radius , bump , function ( moon ) {
+        //     mod.moon = moon;
             mod.earth = earth;
             createSkyDome( function ( universe ) { 
                 mod.universe = universe ;
@@ -323,6 +281,6 @@ function loadModels( o , tm , callback ) {
                     });
                 });
             });
-        });
+        // });
     });
 }
